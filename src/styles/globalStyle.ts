@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 import normalize from "./normalize";
-import typography from "./typography";
+import { typography } from "./typography/typography";
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
@@ -15,45 +15,26 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  ${({ theme }) => css`
     html,
     body,
     #root {
-      min-height: 100vh;
-    }
-
-    body {
-      font-family: ${({ theme }) => theme.font};
+      min-height: ${window.innerHeight}px;
+      background: ${theme.colors.neutral10};
     }
 
     #root {
-      display: flex;
+      display: block;
     }
 
     #launcher {
       display: none !important;
     }
+  `}
   
-  button {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.5;
-
-    :hover {
-      cursor: pointer;
-    }
-
+  button:hover {
+    cursor: pointer;
   }
-  
-  tbody td,
-  tbody th {
-    font-weight: 400;
-  }
-
-  input {
-    font-size: 14px;
-  }
-  
-
 `;
 
 export default GlobalStyle;
