@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import User from "types/entities/User";
-import { CanDonate } from "types/apiResponses/canDonate";
+import { CanDonate } from "types/apiResponses/CanDonate";
 import { apiPost } from "..";
 
 const usersApi = {
