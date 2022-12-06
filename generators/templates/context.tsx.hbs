@@ -1,0 +1,34 @@
+import {
+  createContext,
+  useContext,
+} from "react";
+
+export interface I{{pascalCase name}}Context{}
+
+export type Props = {
+  children: JSX.Element[] | JSX.Element;
+};
+
+export const {{pascalCase name}}Context = createContext<I{{pascalCase name}}Context>({} as I{{pascalCase name}}Context);
+
+function {{pascalCase name}}Provider ({ children }: Props) {
+  const {{camelCase name}}Object: I{{pascalCase name}}Context = {};
+
+  return (
+    <{{pascalCase name}}Context.Provider value={ {{camelCase name}}Object}>
+      {children}
+    </{{pascalCase name}}Context.Provider>
+  );
+};
+
+export default {{pascalCase name}}Provider;
+
+export const use{{pascalCase name}} = () => {
+  const context = useContext({{pascalCase name}}Context);
+
+  if (!context) {
+    throw new Error("use{{pascalCase name}} must be used within {{pascalCase name}}Provider");
+  }
+
+  return context;
+};

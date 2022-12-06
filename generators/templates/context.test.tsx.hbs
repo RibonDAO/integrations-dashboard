@@ -1,0 +1,15 @@
+import { renderComponent } from "config/testUtils";
+import { expectTextToBeInTheDocument } from "config/testUtils/expects";
+import { use{{pascalCase name}} } from ".";
+
+function {{ pascalCase name }}TestPage(){
+  use{{pascalCase name}}();
+  return <div>{{pascalCase name}}</div>
+}
+
+describe("use{{pascalCase name}}", () => {
+  it("renders without error", () => {
+    renderComponent(<{{ pascalCase name }}TestPage />);
+    expectTextToBeInTheDocument("{{pascalCase name}}");
+  });
+});
