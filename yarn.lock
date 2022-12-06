@@ -4833,10 +4833,10 @@
   dependencies:
     "@types/gapi" "*"
 
-"@types/gapi@*", "@types/gapi@^0.0.42":
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/@types/gapi/-/gapi-0.0.42.tgz#772aa461660de09e7a78258064e075818373493c"
-  integrity sha512-kskWpouTGqutaIVRo/swiGnMVoRxOYdRwvaDrh0yavfR9vQoHvJJ7Enp4KE9MEGS8qF7F5KiP6bRNOYcCgRXCA==
+"@types/gapi@*", "@types/gapi@^0.0.43":
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/@types/gapi/-/gapi-0.0.43.tgz#5291ae831006240e3484bdef3fff8dd69baf5947"
+  integrity sha512-GbnoTC1psXR1XlBE76LW0eanE/a56iGUzbUOImEI8/xXHuppdbhhIKX9Z71mTut2XoFADh58PgfRg1cyD7TnTw==
 
 "@types/glob@*", "@types/glob@^7.1.1":
   version "7.2.0"
