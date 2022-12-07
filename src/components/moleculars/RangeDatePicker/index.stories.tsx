@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { useState } from "react";
 import RangeDatePicker, { Props } from ".";
 
 export default {
