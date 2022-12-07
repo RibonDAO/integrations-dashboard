@@ -1,5 +1,9 @@
 {
   "communityParticipationPage": {
     "title": "Community Participation"
+  },
+  "rangeDatePicker": {
+    "from": "From",
+    "to": "To"
   }
 }

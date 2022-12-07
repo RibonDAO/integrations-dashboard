@@ -1,9 +1,9 @@
 import * as S from "./styles";
 
-export interface Props {
+export type Props = {
   icon: string;
   text: string;
-}
+};
 
 function IconAndText({ icon, text }: Props): JSX.Element {
   return (
