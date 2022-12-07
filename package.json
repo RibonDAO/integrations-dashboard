@@ -75,7 +75,7 @@
   "devDependencies": {
     "@chakra-ui/storybook-addon": "^4.0.3",
     "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/config-conventional": "^17.3.0",
     "@storybook/addon-actions": "^6.4.13",
     "@storybook/addon-essentials": "^6.4.13",
     "@storybook/addon-links": "^6.4.13",
