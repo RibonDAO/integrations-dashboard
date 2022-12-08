@@ -16,14 +16,12 @@ export type Props = {
   body?: string | null;
   primaryButtonText?: string | null;
   primaryButtonLeftIcon?: string | undefined;
-  primaryButtonLink?: string;
   primaryButtonTextColor?: string;
   primaryButtonColor?: string;
   primaryButtonBorderColor?: string;
   primaryButtonCallback?: onClickType;
   secondaryButtonText?: string | null;
   secondaryButtonLeftIcon?: string | undefined;
-  secondaryButtonLink?: string;
   secondaryButtonTextColor?: string;
   secondaryButtonColor?: string;
   secondaryButtonBorderColor?: string;
@@ -31,8 +29,6 @@ export type Props = {
   contentLabel?: string;
   onClose?: () => void;
   highlightedText?: string;
-  zIndex?: number;
-  animationData?: Record<any, any>;
   customStyles?: ReactModal.Styles;
 };
 
