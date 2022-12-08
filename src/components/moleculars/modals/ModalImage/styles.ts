@@ -11,7 +11,8 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  height: 152px;
+  height: 100px;
+  padding-top: 16px;
 `;
 
 type TitleProps = {
@@ -23,7 +24,7 @@ export const Title = styled.h3<TitleProps>`
   color: ${({ theme, color }) => color || theme.colors.gray40};
 `;
 
-export const Body = styled.h4`
+export const Body = styled.p`
   margin: 8px 0 20px;
   text-align: center;
   color: ${({ theme }) => theme.colors.gray30};

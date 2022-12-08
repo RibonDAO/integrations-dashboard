@@ -4,6 +4,9 @@
   },
   "rangeDatePicker": {
     "from": "From",
-    "to": "To"
+    "to": "to",
+    "invalidDateRangeModalTitle": "Invalid period",
+    "invalidDateRangeModalBody": "Select a period with a start date previous to the end date.",
+    "invalidDateRangeModalClose": "Ok"
   }
 }

@@ -1,7 +1,9 @@
+import { MODAL_TYPES } from "contexts/modalContext/helpers";
 import DatePicker from "react-datepicker";
 import { useTranslation } from "react-i18next";
 import "./react-datepicker-theme.css";
-//  import ScheduleErrorImage from "assets/images/schedule-error.svg";
+import ScheduleErrorImage from "assets/images/schedule-error.svg";
+import { useModal } from "hooks/modalHooks/useModal";
 import * as S from "./styles";
 
 export type Props = {
@@ -21,6 +23,20 @@ function RangeDatePicker({
     keyPrefix: "rangeDatePicker",
   });
 
+  const { show, hide } = useModal({
+    type: MODAL_TYPES.MODAL_IMAGE,
+    props: {
+      title: t("invalidDateRangeModalTitle"),
+      body: t("invalidDateRangeModalBody"),
+      primaryButtonText: t("invalidDateRangeModalClose"),
+      primaryButtonCallback: () => {
+        hide();
+      },
+      onClose: () => hide(),
+      image: ScheduleErrorImage,
+    },
+  });
+
   const validateAndSetDate = (
     date: Date,
     callback: any,
@@ -30,7 +46,7 @@ function RangeDatePicker({
       if (condition) {
         callback(date);
       } else {
-        alert("Invalid date range");
+        show();
       }
     } else {
       callback(new Date());
