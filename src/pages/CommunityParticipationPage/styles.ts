@@ -35,3 +35,7 @@ export const Divider = styled.hr`
   border-top: ${({ theme }) => theme.colors.gray30};
   margin-block: 24px;
 `;
+
+export const DaysDifference = styled.small`
+  color: ${({ theme }) => theme.colors.gray20};
+`;
