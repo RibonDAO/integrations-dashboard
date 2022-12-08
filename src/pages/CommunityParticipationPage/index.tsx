@@ -30,13 +30,6 @@ function CommunityParticipationPage(): JSX.Element {
           handleStartDateChange={setStartDate}
           handleEndDateChange={setEndDate}
         />
-        <S.DaysDifference>
-          Últimos{" "}
-          {Math.ceil(
-            (endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24),
-          )}
-          {" dias"}
-        </S.DaysDifference>
       </S.InnerContainer>
     </S.Container>
   );
