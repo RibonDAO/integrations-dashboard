@@ -49,6 +49,7 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "react/jsx-wrap-multilines": "off",
     "@typescript-eslint/no-empty-function": "off",
+    "react/require-default-props": "off",
     "no-else-return": "off",
     "no-unused-vars": [
       "error",

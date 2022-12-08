@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { QueryClient, QueryClientProvider } from "react-query";
 import RoutesComponent from "config/routes";
 import GlobalStyle from "./styles/globalStyle";
+import ModalProvider from "./contexts/modalContext";
 import theme from "./styles/theme";
 
 function App() {
@@ -11,10 +12,12 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <BrowserRouter>
-          <RoutesComponent />
-        </BrowserRouter>
+        <ModalProvider>
+          <GlobalStyle />
+          <BrowserRouter>
+            <RoutesComponent />
+          </BrowserRouter>
+        </ModalProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

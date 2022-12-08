@@ -7,6 +7,10 @@ import {
   screen,
 } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
+import ModalProvider, {
+  IModalContext,
+  ModalContext,
+} from "contexts/modalContext";
 import { createMemoryHistory, MemoryHistory } from "history";
 import { Router } from "react-router-dom";
 import theme from "styles/theme";
@@ -55,6 +59,7 @@ function renderProvider(
 export type RenderComponentProps = {
   history?: MemoryHistory;
   authenticationProviderValue?: Partial<IAuthenticationContext>;
+  modalProviderValue?: Partial<IModalContext>;
   locationState?: Record<any, any>;
 };
 
@@ -63,6 +68,7 @@ function renderAllProviders(
   {
     history = createMemoryHistory(),
     authenticationProviderValue = {},
+    modalProviderValue = {},
     locationState = {},
   }: RenderComponentProps = {},
 ) {
@@ -80,10 +86,15 @@ function renderAllProviders(
           <I18nextProvider i18n={i18n}>
             <Router location={locationState} navigator={historyObject}>
               {renderProvider(
-                AuthenticationProvider,
-                AuthenticationContext,
-                authenticationProviderValue,
-                children,
+                ModalProvider,
+                ModalContext,
+                modalProviderValue,
+                renderProvider(
+                  AuthenticationProvider,
+                  AuthenticationContext,
+                  authenticationProviderValue,
+                  children,
+                ),
               )}
             </Router>
           </I18nextProvider>

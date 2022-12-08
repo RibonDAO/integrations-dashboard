@@ -10,10 +10,12 @@ function CommunityParticipationPage(): JSX.Element {
     keyPrefix: "communityParticipationPage",
   });
 
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(
-    new Date(new Date().setDate(new Date().getDate() + 7)),
-  );
+  const [endDate, setEndDate] = useState<Date>(new Date());
+
+  const previousDate = (date: Date, days: number) =>
+    new Date(new Date(date).setDate(new Date(date).getDate() - days));
+
+  const [startDate, setStartDate] = useState<Date>(previousDate(endDate, 7));
 
   return (
     <S.Container>
