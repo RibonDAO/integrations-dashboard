@@ -31,9 +31,9 @@ describe("useModalContext", () => {
       renderComponent(
         <ModalTestPage
           showModalProps={{
-            type: MODAL_TYPES.MODAL_ICON,
+            type: MODAL_TYPES.MODAL_IMAGE,
             props: {
-              icon: "icon",
+              image: "icon",
               title: "title",
               body: "body",
             },
@@ -52,9 +52,9 @@ describe("useModalContext", () => {
       renderComponent(
         <ModalTestPage
           showModalProps={{
-            type: MODAL_TYPES.MODAL_ICON,
+            type: MODAL_TYPES.MODAL_IMAGE,
             props: {
-              icon: "icon",
+              image: "icon",
               title: "title",
               body: "body",
             },
