@@ -13,7 +13,7 @@ export const DatePickerWrapper = styled.div`
 
   * .react-datepicker__input-container {
     color: ${({ theme }) => theme.colors.gray30};
-    width: 95px;
+    width: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,6 +32,7 @@ export const DatePickerWrapper = styled.div`
       height: 16px;
       display: flex;
       align-items: center;
+      margin-left: 8px;
     }
   }
 `;
