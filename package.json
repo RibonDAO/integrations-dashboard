@@ -1,5 +1,5 @@
 {
-  "name": "ribon_template",
+  "name": "ribon-integrations-dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
