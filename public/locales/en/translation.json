@@ -1,6 +1,8 @@
 {
   "communityParticipationPage": {
-    "title": "Community Participation"
+    "title": "Community Participation",
+    "participatingDonors": "participating donors",
+    "donationsMade": "donations made"
   },
   "rangeDatePicker": {
     "from": "From",
