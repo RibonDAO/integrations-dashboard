@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import {
   useIntegrationImpact,
   useIntegration,
-} from "@nicknish09/ribon-shared/dist/hooks";
+} from "@ribon.io/shared/dist/hooks";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
