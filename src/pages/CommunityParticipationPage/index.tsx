@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 import RibonIconSquared from "assets/icons/ribon-icon-squared.svg";
 import RangeDatePicker from "components/moleculars/RangeDatePicker";
 import { useTranslation } from "react-i18next";
-import { useIntegrationImpact } from "@nicknish09/ribon-shared/dist/hooks";
+import {
+  useIntegrationImpact,
+  useIntegration,
+} from "@nicknish09/ribon-shared/dist/hooks";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
@@ -16,8 +19,12 @@ function CommunityParticipationPage(): JSX.Element {
     new Date(new Date(date).setDate(new Date(date).getDate() - days));
 
   const [startDate, setStartDate] = useState<Date>(previousDate(endDate, 7));
+  const integrationId = new URL(window.location.href).searchParams.get(
+    "integration_id",
+  );
+  const { integration } = useIntegration(integrationId);
   const { integrationImpact, refetch } = useIntegrationImpact(
-    new URL(window.location.href).searchParams.get("integration_id"),
+    integrationId,
     `${
       startDate.getMonth() + 1
     }-${startDate.getDate()}-${startDate.getFullYear()}`,
@@ -28,14 +35,10 @@ function CommunityParticipationPage(): JSX.Element {
     refetch();
   }, [startDate, endDate]);
 
-  useEffect(() => {
-    console.log(integrationImpact);
-  }, [integrationImpact]);
-
   return (
     <S.Container>
       <S.InnerContainer>
-        <IconAndText icon={RibonIconSquared} text="Dinheiro na nota" />
+        <IconAndText icon={RibonIconSquared} text={integration?.name} />
         <S.Title>{t("title")}</S.Title>
         <S.Divider />
 
