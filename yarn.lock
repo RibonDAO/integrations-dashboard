@@ -3611,6 +3611,22 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@nicknish09/ribon-shared@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@nicknish09/ribon-shared/-/ribon-shared-1.0.2.tgz#bd33d041d531b0ff6fdb0130fa261f228a547f26"
+  integrity sha512-vsXWhq14KDIdMdxEJlYAXP66zhvrxnSKVk+rSDQOGCkuk2rDFTqF6PDvJv2TEcOlejmERqZIWDObz3AyixzkKQ==
+  dependencies:
+    "@apollo/client" "^3.6.9"
+    "@types/base-64" "^1.0.0"
+    axios "^0.27.2"
+    camelcase-keys "^7.0.2"
+    cross-fetch "^3.1.5"
+    graphql "^16.6.0"
+    prop-types "^15.7.2"
+    react-query "^3.34.8"
+    snakecase-keys "^5.4.4"
+    styled-components "^5.3.6"
+
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz#dbf733a965ca47b1973177dc0bb6c889edcfb129"

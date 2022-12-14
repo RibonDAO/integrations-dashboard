@@ -2,7 +2,8 @@
   "communityParticipationPage": {
     "title": "Community Participation",
     "participatingDonors": "participating donors",
-    "donationsMade": "donations made"
+    "donationsMade": "donations made",
+    "impactPerProject": "Results per Project"
   },
   "rangeDatePicker": {
     "from": "From",

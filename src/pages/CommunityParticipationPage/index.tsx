@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import RibonIconSquared from "assets/icons/ribon-icon-squared.svg";
 import RangeDatePicker from "components/moleculars/RangeDatePicker";
 import { useTranslation } from "react-i18next";
-import { useIntegrationImpact } from "@ribon/shared/dist/hooks";
+import { useIntegrationImpact } from "@nicknish09/ribon-shared/dist/hooks";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
@@ -27,6 +27,10 @@ function CommunityParticipationPage(): JSX.Element {
   useEffect(() => {
     refetch();
   }, [startDate, endDate]);
+
+  useEffect(() => {
+    console.log(integrationImpact);
+  }, [integrationImpact]);
 
   return (
     <S.Container>
@@ -61,6 +65,17 @@ function CommunityParticipationPage(): JSX.Element {
             </S.ParticipatingDonorsSubtext>
           </S.ContentDiv>
         </S.ContentContainer>
+
+        <S.Title>{t("impactPerProject")}</S.Title>
+        {integrationImpact?.impactPerNonProfit.map(
+          ({ impact, nonProfit }: any) => (
+            <div>
+              <p>{nonProfit.name}</p>
+              <p>{impact}</p>
+              <p>{nonProfit.impactDescription}</p>
+            </div>
+          ),
+        )}
       </S.InnerContainer>
     </S.Container>
   );
