@@ -16,13 +16,17 @@ function CommunityParticipationPage(): JSX.Element {
     new Date(new Date(date).setDate(new Date(date).getDate() - days));
 
   const [startDate, setStartDate] = useState<Date>(previousDate(endDate, 7));
-  const { integrationImpact } = useIntegrationImpact(
+  const { integrationImpact, refetch } = useIntegrationImpact(
     new URL(window.location.href).searchParams.get("integration_id"),
+    `${
+      startDate.getMonth() + 1
+    }-${startDate.getDate()}-${startDate.getFullYear()}`,
+    `${endDate.getMonth() + 1}-${endDate.getDate()}-${endDate.getFullYear()}`,
   );
 
   useEffect(() => {
-    console.log(integrationImpact);
-  }, [integrationImpact]);
+    refetch();
+  }, [startDate, endDate]);
 
   return (
     <S.Container>
@@ -41,7 +45,7 @@ function CommunityParticipationPage(): JSX.Element {
         <S.ContentContainer>
           <S.ContentDiv>
             <S.ParticipatingDonorsText>
-              1.286{integrationImpact?.totalDonors}
+              {integrationImpact?.totalDonors}
             </S.ParticipatingDonorsText>
             <S.ParticipatingDonorsSubtext>
               {t("participatingDonors")}
@@ -50,7 +54,7 @@ function CommunityParticipationPage(): JSX.Element {
 
           <S.ContentDiv>
             <S.ParticipatingDonorsText>
-              48.499{integrationImpact?.totalDonations}
+              {integrationImpact?.totalDonations}
             </S.ParticipatingDonorsText>
             <S.ParticipatingDonorsSubtext>
               {t("donationsMade")}
