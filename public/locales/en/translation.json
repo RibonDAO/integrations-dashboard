@@ -1,5 +1,12 @@
 {
-  "login": {
-    "title": "RibonDAO Frontend Template"
+  "communityParticipationPage": {
+    "title": "Community Participation"
+  },
+  "rangeDatePicker": {
+    "from": "From",
+    "to": "to",
+    "invalidDateRangeModalTitle": "Invalid period",
+    "invalidDateRangeModalBody": "Select a period with a start date previous to the end date.",
+    "invalidDateRangeModalClose": "Ok"
   }
 }
