@@ -74,7 +74,7 @@ function CommunityParticipationPage(): JSX.Element {
             ({ impact, nonProfit }: any) => (
               <div key={nonProfit.id}>
                 <CardCroppedImage
-                  image={nonProfit.coverImage}
+                  image={nonProfit.backgroundImage}
                   secondaryText={nonProfit.impactDescription}
                   mainText={impact}
                 />
