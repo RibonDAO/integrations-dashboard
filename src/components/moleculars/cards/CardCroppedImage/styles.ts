@@ -6,10 +6,9 @@ export const Container = styled.div`
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background: ${({ theme }) => theme.colors.neutral10};
   box-shadow: 0 4px 12px ${({ theme }) => theme.colors.defaultShadow};
+  min-height: 326px;
 `;
 
 export const InnerContainer = styled.div`
