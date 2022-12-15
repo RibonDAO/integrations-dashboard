@@ -25,10 +25,8 @@ function CommunityParticipationPage(): JSX.Element {
   const { integration } = useIntegration(integrationId);
   const { integrationImpact, refetch } = useIntegrationImpact(
     integrationId,
-    `${
-      startDate.getMonth() + 1
-    }-${startDate.getDate()}-${startDate.getFullYear()}`,
-    `${endDate.getMonth() + 1}-${endDate.getDate()}-${endDate.getFullYear()}`,
+    startDate.toLocaleDateString(),
+    endDate.toLocaleDateString(),
   );
 
   useEffect(() => {
@@ -72,7 +70,7 @@ function CommunityParticipationPage(): JSX.Element {
         <S.Title>{t("impactPerProject")}</S.Title>
         {integrationImpact?.impactPerNonProfit.map(
           ({ impact, nonProfit }: any) => (
-            <div>
+            <div key={nonProfit.id}>
               <p>{nonProfit.name}</p>
               <p>{impact}</p>
               <p>{nonProfit.impactDescription}</p>
