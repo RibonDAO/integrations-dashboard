@@ -14,8 +14,10 @@ function CardCroppedImage({
   return (
     <S.Container>
       <S.SupportImage src={image} />
-      <S.MainText>{mainText}</S.MainText>
-      <S.SubText>{secondaryText}</S.SubText>
+      <S.InnerContainer>
+        <S.MainText>{mainText}</S.MainText>
+        <S.SubText>{secondaryText}</S.SubText>
+      </S.InnerContainer>
     </S.Container>
   );
 }

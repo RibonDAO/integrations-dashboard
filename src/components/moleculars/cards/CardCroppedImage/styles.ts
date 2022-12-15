@@ -12,6 +12,15 @@ export const Container = styled.div`
   box-shadow: 0 4px 12px ${({ theme }) => theme.colors.defaultShadow};
 `;
 
+export const InnerContainer = styled.div`
+  padding: 20px 16px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+`;
+
 export const SupportImage = styled.img`
   mask-image: url(${WaveCut});
   mask-size: 100% 100%;
