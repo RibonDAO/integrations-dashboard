@@ -15,6 +15,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     background-size: 300px;
@@ -58,6 +59,17 @@ export const ContentContainer = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const ImpactContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 `;
 

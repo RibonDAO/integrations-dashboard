@@ -7,6 +7,7 @@ import {
   useIntegrationImpact,
   useIntegration,
 } from "@ribon.io/shared/dist/hooks";
+import CardCroppedImage from "components/moleculars/cards/CardCroppedImage";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
@@ -68,15 +69,19 @@ function CommunityParticipationPage(): JSX.Element {
         </S.ContentContainer>
 
         <S.Title>{t("impactPerProject")}</S.Title>
-        {integrationImpact?.impactPerNonProfit.map(
-          ({ impact, nonProfit }: any) => (
-            <div key={nonProfit.id}>
-              <p>{nonProfit.name}</p>
-              <p>{impact}</p>
-              <p>{nonProfit.impactDescription}</p>
-            </div>
-          ),
-        )}
+        <S.ImpactContainer>
+          {integrationImpact?.impactPerNonProfit.map(
+            ({ impact, nonProfit }: any) => (
+              <div key={nonProfit.id}>
+                <CardCroppedImage
+                  image={nonProfit.coverImage}
+                  secondaryText={nonProfit.impactDescription}
+                  mainText={impact}
+                />
+              </div>
+            ),
+          )}
+        </S.ImpactContainer>
       </S.InnerContainer>
     </S.Container>
   );
