@@ -1,0 +1,15 @@
+{
+  "communityParticipationPage": {
+    "title": "Engajamento da Comunidade",
+    "participatingDonors": "doadores participantes",
+    "donationsMade": "doações realizadas",
+    "impactPerProject": "Resultados por projeto"
+  },
+  "rangeDatePicker": {
+    "from": "De",
+    "to": "até",
+    "invalidDateRangeModalTitle": "Período inválido",
+    "invalidDateRangeModalBody": "Selecione um período com data inicial anterior à data final.",
+    "invalidDateRangeModalClose": "Entendi"
+  }
+}
