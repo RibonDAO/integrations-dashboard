@@ -9,3 +9,7 @@ export function formatDate(date: Date) {
     padTo2Digits(date.getDate()),
   ].join("-");
 }
+
+export function previousDate(date: Date, days: number) {
+  return new Date(new Date(date).setDate(new Date(date).getDate() - days));
+}
