@@ -3,7 +3,8 @@
     "title": "Community Participation",
     "participatingDonors": "participating donors",
     "donationsMade": "donations made",
-    "impactPerProject": "Results per Project"
+    "impactPerProject": "Results per Project",
+    "datePickerFormat": "MM/dd/yyyy"
   },
   "rangeDatePicker": {
     "from": "From",
