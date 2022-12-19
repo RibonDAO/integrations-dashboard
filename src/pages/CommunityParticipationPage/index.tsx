@@ -8,29 +8,37 @@ import {
   useIntegration,
 } from "@ribon.io/shared/dist/hooks";
 import CardCroppedImage from "components/moleculars/cards/CardCroppedImage";
+import { formatDate, previousDate } from "lib/dateFormatter";
+import { updateLocationSearch } from "lib/locationSearch";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
   const { t } = useTranslation("translation", {
     keyPrefix: "communityParticipationPage",
   });
-  const [endDate, setEndDate] = useState<Date>(new Date());
+  const { searchParams } = new URL(window.location.href);
+  const integrationId = searchParams.get("integration_id");
+  const initialEndDate = () => {
+    const ed = searchParams.get("end_date");
+    return ed !== null ? new Date(`${ed}T00:00`) : new Date();
+  };
+  const [endDate, setEndDate] = useState<Date>(initialEndDate());
 
-  const previousDate = (date: Date, days: number) =>
-    new Date(new Date(date).setDate(new Date(date).getDate() - days));
-
-  const [startDate, setStartDate] = useState<Date>(previousDate(endDate, 7));
-  const integrationId = new URL(window.location.href).searchParams.get(
-    "integration_id",
-  );
+  const initialStartDate = () => {
+    const sd = searchParams.get("start_date");
+    return sd !== null ? new Date(`${sd}T00:00`) : previousDate(endDate, 7);
+  };
+  const [startDate, setStartDate] = useState<Date>(initialStartDate());
   const { integration } = useIntegration(integrationId);
   const { integrationImpact, refetch } = useIntegrationImpact(
     integrationId,
-    startDate.toLocaleDateString(),
-    endDate.toLocaleDateString(),
+    formatDate(startDate),
+    formatDate(endDate),
   );
 
   useEffect(() => {
+    updateLocationSearch("start_date", formatDate(startDate));
+    updateLocationSearch("end_date", formatDate(endDate));
     refetch();
   }, [startDate, endDate]);
 
@@ -46,6 +54,7 @@ function CommunityParticipationPage(): JSX.Element {
           endDate={endDate}
           handleStartDateChange={setStartDate}
           handleEndDateChange={setEndDate}
+          customDateFormat={t("datePickerFormat")}
         />
 
         <S.ContentContainer>
