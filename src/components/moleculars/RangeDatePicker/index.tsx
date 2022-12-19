@@ -11,6 +11,7 @@ export type Props = {
   endDate: Date;
   handleStartDateChange: (date: Date) => void;
   handleEndDateChange: (date: Date) => void;
+  customDateFormat?: string;
 };
 
 function RangeDatePicker({
@@ -18,6 +19,7 @@ function RangeDatePicker({
   endDate,
   handleStartDateChange,
   handleEndDateChange,
+  customDateFormat,
 }: Props): JSX.Element {
   const { t } = useTranslation("translation", {
     keyPrefix: "rangeDatePicker",
@@ -63,6 +65,7 @@ function RangeDatePicker({
             validateAndSetDate(date, handleStartDateChange, date <= endDate)
           }
           maxDate={new Date()}
+          dateFormat={customDateFormat}
         />
       </S.DatePickerWrapper>
       <S.Text>{t("to")}</S.Text>
@@ -73,6 +76,7 @@ function RangeDatePicker({
             validateAndSetDate(date, handleEndDateChange, date >= startDate)
           }
           maxDate={new Date()}
+          dateFormat={customDateFormat}
         />
       </S.DatePickerWrapper>
     </S.Container>

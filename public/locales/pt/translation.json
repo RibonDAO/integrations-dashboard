@@ -3,7 +3,8 @@
     "title": "Engajamento da Comunidade",
     "participatingDonors": "doadores participantes",
     "donationsMade": "doações realizadas",
-    "impactPerProject": "Resultados por projeto"
+    "impactPerProject": "Resultados por projeto",
+    "datePickerFormat": "dd/MM/yyyy"
   },
   "rangeDatePicker": {
     "from": "De",

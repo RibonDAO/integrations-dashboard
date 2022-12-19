@@ -8,6 +8,7 @@ import {
   useIntegration,
 } from "@ribon.io/shared/dist/hooks";
 import CardCroppedImage from "components/moleculars/cards/CardCroppedImage";
+import { formatDate } from "lib/dateFormatter";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
@@ -26,11 +27,12 @@ function CommunityParticipationPage(): JSX.Element {
   const { integration } = useIntegration(integrationId);
   const { integrationImpact, refetch } = useIntegrationImpact(
     integrationId,
-    startDate.toLocaleDateString(),
-    endDate.toLocaleDateString(),
+    formatDate(startDate),
+    formatDate(endDate),
   );
 
   useEffect(() => {
+    console.log(formatDate(startDate), formatDate(endDate));
     refetch();
   }, [startDate, endDate]);
 
@@ -46,6 +48,7 @@ function CommunityParticipationPage(): JSX.Element {
           endDate={endDate}
           handleStartDateChange={setStartDate}
           handleEndDateChange={setEndDate}
+          customDateFormat={t("datePickerFormat")}
         />
 
         <S.ContentContainer>
