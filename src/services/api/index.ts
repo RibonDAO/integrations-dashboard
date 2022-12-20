@@ -1,62 +1,28 @@
-import Axios, { AxiosRequestConfig } from "axios";
-import camelCaseKeys from "camelcase-keys";
-import snakeCaseKeys from "snakecase-keys";
-import { RIBON_API } from "utils/constants";
+import {
+  apiGet,
+  apiDelete,
+  apiPut,
+  apiPost,
+  api,
+} from "@ribon.io/shared/dist/services";
+import { formattedLanguage } from "lib/currentLanguage";
 
-export const baseURL = RIBON_API;
-export const API_SCOPE = "/api/v1";
+const RIBON_API = "https://dapp-dev-api.ribon.io/";
 
-const api = Axios.create({
-  baseURL,
-  headers: {
-    "Content-Type": "application/json",
-  },
-  validateStatus: (status) => status >= 200 && status < 300,
-});
+export const baseURL = process.env.REACT_APP_RIBON_API || RIBON_API;
+export async function initializeApi() {
+  api.defaults.baseURL = baseURL;
 
-api.interceptors.request.use((request) =>
-  request?.data
-    ? { ...request, data: snakeCaseKeys(request?.data, { deep: true }) }
-    : request,
-);
+  // TODO update this to use the useLanguage hook / localstorage when it's available
+  const lang = await formattedLanguage(navigator.language);
+  api.interceptors.request.use((config) => {
+    const authHeaders = { Language: lang };
+    // eslint-disable-next-line no-param-reassign
+    config.headers = { ...authHeaders, ...config.headers };
 
-api.interceptors.response.use(
-  (response) => ({
-    ...response,
-    data: camelCaseKeys(response.data, { deep: true }),
-  }),
-  (error) => Promise.reject(error),
-);
-
-api.interceptors.request.use((config) => {
-  // eslint-disable-next-line no-param-reassign
-  config.headers = { ...config.headers };
-
-  return config;
-});
-
-export function apiGet(url: string, config?: AxiosRequestConfig) {
-  if (config) return api.get(`${API_SCOPE}/${url}`, config);
-
-  return api.get(`${API_SCOPE}/${url}`);
+    return config;
+  });
 }
 
-export function apiPost(url: string, data: any, config?: AxiosRequestConfig) {
-  if (config) return api.post(`${API_SCOPE}/${url}`, data, config);
-
-  return api.post(`${API_SCOPE}/${url}`, data);
-}
-
-export function apiPut(url: string, data: any, config?: AxiosRequestConfig) {
-  if (config) return api.put(`${API_SCOPE}/${url}`, data, config);
-
-  return api.put(`${API_SCOPE}/${url}`, data);
-}
-
-export function apiDelete(url: string, config?: AxiosRequestConfig) {
-  if (config) return api.delete(`${API_SCOPE}/${url}`, config);
-
-  return api.delete(`${API_SCOPE}/${url}`);
-}
-
+export { apiGet, apiDelete, apiPut, apiPost };
 export default api;
