@@ -4,6 +4,7 @@ import "./i18n";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { initializeApi } from "./services/api";
 
 declare global {
   interface Window {
@@ -11,6 +12,7 @@ declare global {
   }
 }
 
+initializeApi();
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
