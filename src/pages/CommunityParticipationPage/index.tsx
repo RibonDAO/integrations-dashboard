@@ -77,20 +77,22 @@ function CommunityParticipationPage(): JSX.Element {
           </S.ContentDiv>
         </S.ContentContainer>
 
-        <S.Title>{t("impactPerProject")}</S.Title>
-        <S.ImpactContainer>
-          {integrationImpact?.impactPerNonProfit.map(
-            ({ impact, nonProfit }: any) => (
-              <div key={nonProfit.id}>
-                <CardCroppedImage
-                  image={nonProfit.backgroundImage}
-                  secondaryText={nonProfit.impactDescription}
-                  mainText={impact}
-                />
-              </div>
-            ),
-          )}
-        </S.ImpactContainer>
+        <S.GrayContainer>
+          <S.TitleResults>{t("impactPerProject")}</S.TitleResults>
+          <S.ImpactContainer>
+            {integrationImpact?.impactPerNonProfit.map(
+              ({ impact, nonProfit }: any) => (
+                <div key={nonProfit.id}>
+                  <CardCroppedImage
+                    image={nonProfit.backgroundImage}
+                    secondaryText={nonProfit.impactDescription}
+                    mainText={impact}
+                  />
+                </div>
+              ),
+            )}
+          </S.ImpactContainer>
+        </S.GrayContainer>
       </S.InnerContainer>
     </S.Container>
   );
