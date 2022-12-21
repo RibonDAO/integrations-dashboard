@@ -3,10 +3,7 @@ import { useEffect, useState } from "react";
 import RibonIconSquared from "assets/icons/ribon-icon-squared.svg";
 import RangeDatePicker from "components/moleculars/RangeDatePicker";
 import { useTranslation } from "react-i18next";
-import {
-  useIntegrationImpact,
-  useIntegration,
-} from "@ribon.io/shared/dist/hooks";
+import { useIntegrationImpact, useIntegration } from "@ribon.io/shared/hooks";
 import CardCroppedImage from "components/moleculars/cards/CardCroppedImage";
 import { formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";

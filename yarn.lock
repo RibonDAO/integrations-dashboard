@@ -3738,10 +3738,10 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.0.5.tgz#d5c65626add4c3c185a89aa5bd38b1e42daec075"
   integrity sha512-my0Mycd+jruq/1lQuO5LBB6WTlL/e8DTCYWp44DfMTDcXz8DcTlgF0ISaLsGewt+ctHN+yA8xMq3q/N7uWJPug==
 
-"@ribon.io/shared@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@ribon.io/shared/-/shared-1.0.6.tgz#3ef4960a69bbca47e72219fe72e94bb620a28249"
-  integrity sha512-sRwUA5YK1uR2xkTaUpS53DvUKsfRC/tQusc1IH+1PJ8J2qpOAvvkR2dhmDRJBwfEhUNg2/nWEOGS0XYrWvag8w==
+"@ribon.io/shared@^1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@ribon.io/shared/-/shared-1.0.12.tgz#f1bfaac112b8e218126bee2a11c36c367ad1be2c"
+  integrity sha512-rhSnb4wo6WTr7CZAS8UuXmJD7PAEOQLF/uPpva7Nn5VtGYQYiMCL1//f444h/O2lrm9IabtwsFjMyK0+RxbIyw==
   dependencies:
     "@apollo/client" "^3.6.9"
     "@types/base-64" "^1.0.0"

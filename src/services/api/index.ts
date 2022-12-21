@@ -4,7 +4,7 @@ import {
   apiPut,
   apiPost,
   api,
-} from "@ribon.io/shared/dist/services";
+} from "@ribon.io/shared/services";
 import { formattedLanguage } from "lib/currentLanguage";
 
 const RIBON_API = "https://dapp-dev-api.ribon.io/";
