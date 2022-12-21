@@ -1,17 +1,12 @@
 import styled from "styled-components";
 import Shape from "assets/images/green-diamond-shape.svg";
-import {
-  stylizedHeadingLarge,
-  stylizedTitleLarge,
-} from "styles/typography/stylized";
+import { stylizedHeadingLarge } from "styles/typography/stylized";
 import {
   defaultHeadingLarge,
   defaultParagraphMedium,
 } from "styles/typography/default";
 
-export const Container = styled.div``;
-
-export const CommunitySection = styled.div`
+export const Container = styled.div`
   width: 100%;
   min-height: 70vh;
   background: url(${Shape}) no-repeat;
@@ -20,6 +15,7 @@ export const CommunitySection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     background-size: 300px;
@@ -40,12 +36,6 @@ export const Title = styled.h6`
   ${stylizedHeadingLarge};
   margin: 8px 0 24px 0;
   color: ${({ theme }) => theme.colors.darkGray};
-`;
-
-export const TitleResults = styled.h6`
-  ${stylizedTitleLarge};
-  margin: 8px 0 24px 0;
-  color: ${({ theme }) => theme.colors.green40};
 `;
 
 export const ParticipatingDonorsText = styled.h6`

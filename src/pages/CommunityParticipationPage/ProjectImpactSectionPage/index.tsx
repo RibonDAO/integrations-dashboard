@@ -41,26 +41,24 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
 
   return (
     <S.Container>
-      <S.InnerContainer>
-        <S.Title>{t("title")}</S.Title>
-        <GroupButtons
-          elements={filterOptions}
-          nameExtractor={(element) => element.text}
-        />
-        <S.ImpactContainer>
-          {integrationImpact?.impactPerNonProfit.map(
-            ({ impact, nonProfit }: any) => (
-              <div key={nonProfit.id}>
-                <CardCroppedImage
-                  image={nonProfit.backgroundImage}
-                  secondaryText={nonProfit.impactDescription}
-                  mainText={impact}
-                />
-              </div>
-            ),
-          )}
-        </S.ImpactContainer>
-      </S.InnerContainer>
+      <S.Title>{t("title")}</S.Title>
+      <GroupButtons
+        elements={filterOptions}
+        nameExtractor={(element) => element.text}
+      />
+      <S.ImpactContainer>
+        {integrationImpact?.impactPerNonProfit.map(
+          ({ impact, nonProfit }: any) => (
+            <div key={nonProfit.id}>
+              <CardCroppedImage
+                image={nonProfit.backgroundImage}
+                secondaryText={nonProfit.impactDescription}
+                mainText={impact}
+              />
+            </div>
+          ),
+        )}
+      </S.ImpactContainer>
     </S.Container>
   );
 }

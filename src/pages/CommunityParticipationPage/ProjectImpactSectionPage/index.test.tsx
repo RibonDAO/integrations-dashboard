@@ -6,6 +6,6 @@ describe("ProjectImpactSectionPage", () => {
   it("should render without error", () => {
     renderComponent(<ProjectImpactSectionPage integrationImpact={null} />);
 
-    expectTextToBeInTheDocument("ProjectImpactSectionPage");
+    expectTextToBeInTheDocument("Results per Project");
   });
 });
