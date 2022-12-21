@@ -10,14 +10,22 @@ import {
 import CardCroppedImage from "components/moleculars/cards/CardCroppedImage";
 import { formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
+import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
   const { t } = useTranslation("translation", {
     keyPrefix: "communityParticipationPage",
   });
+  const navigate = useNavigate();
+
   const { searchParams } = new URL(window.location.href);
   const integrationId = searchParams.get("integration_id");
+
+  if (!integrationId) {
+    navigate("/error?code=missing_integration_id_param");
+  }
+
   const initialEndDate = () => {
     const ed = searchParams.get("end_date");
     return ed !== null ? new Date(`${ed}T00:00`) : new Date();
@@ -30,7 +38,7 @@ function CommunityParticipationPage(): JSX.Element {
   };
   const [startDate, setStartDate] = useState<Date>(initialStartDate());
   const { integration } = useIntegration(integrationId);
-  const { integrationImpact, refetch } = useIntegrationImpact(
+  const { integrationImpact, refetch, isLoading } = useIntegrationImpact(
     integrationId,
     formatDate(startDate),
     formatDate(endDate),
@@ -60,7 +68,7 @@ function CommunityParticipationPage(): JSX.Element {
         <S.ContentContainer>
           <S.ContentDiv>
             <S.ParticipatingDonorsText>
-              {integrationImpact?.totalDonors}
+              {integrationImpact?.totalDonors || 0}
             </S.ParticipatingDonorsText>
             <S.ParticipatingDonorsSubtext>
               {t("participatingDonors")}
@@ -69,7 +77,7 @@ function CommunityParticipationPage(): JSX.Element {
 
           <S.ContentDiv>
             <S.ParticipatingDonorsText>
-              {integrationImpact?.totalDonations}
+              {integrationImpact?.totalDonations || 0}
             </S.ParticipatingDonorsText>
             <S.ParticipatingDonorsSubtext>
               {t("donationsMade")}
@@ -80,17 +88,19 @@ function CommunityParticipationPage(): JSX.Element {
         <S.GrayContainer>
           <S.TitleResults>{t("impactPerProject")}</S.TitleResults>
           <S.ImpactContainer>
-            {integrationImpact?.impactPerNonProfit.map(
-              ({ impact, nonProfit }: any) => (
-                <div key={nonProfit.id}>
-                  <CardCroppedImage
-                    image={nonProfit.backgroundImage}
-                    secondaryText={nonProfit.impactDescription}
-                    mainText={impact}
-                  />
-                </div>
-              ),
-            )}
+            {!isLoading &&
+              integrationImpact?.impactPerNonProfit.map(
+                ({ impact, nonProfit }: any) => (
+                  <div key={nonProfit.id}>
+                    <CardCroppedImage
+                      image={nonProfit.backgroundImage}
+                      secondaryText={nonProfit.impactDescription}
+                      mainText={impact}
+                      internalImage={nonProfit.logo}
+                    />
+                  </div>
+                ),
+              )}
           </S.ImpactContainer>
         </S.GrayContainer>
       </S.InnerContainer>
