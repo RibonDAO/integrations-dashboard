@@ -6,9 +6,7 @@ import {
   defaultParagraphMedium,
 } from "styles/typography/default";
 
-export const Container = styled.div``;
-
-export const CommunitySection = styled.div`
+export const Container = styled.div`
   width: 100%;
   min-height: 70vh;
   background: url(${Shape}) no-repeat;
@@ -17,6 +15,7 @@ export const CommunitySection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     background-size: 300px;
@@ -25,10 +24,12 @@ export const CommunitySection = styled.div`
 
 export const InnerContainer = styled.div`
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 24px;
   margin-top: 4rem;
+  padding: 0 24px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
+    padding: 0 20%;
+  }
 `;
 
 export const Title = styled.h6`
@@ -60,6 +61,18 @@ export const ContentContainer = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const GrayContainer = styled.div`
+  background-color: ${({ theme }) => theme.colors.gray10};
+  min-height: 900px;
+  margin: 28px -24px 0 -24px;
+  padding: 32px 24px 0 24px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
+    margin: 28px -33.33% 0 -33.33%;
+    padding: 32px 33.33% 0 33.33%;
   }
 `;
 

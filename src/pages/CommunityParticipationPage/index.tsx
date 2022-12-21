@@ -9,8 +9,8 @@ import {
 } from "@ribon.io/shared/dist/hooks";
 import { formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
-import * as S from "./styles";
 import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
+import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
   const { t } = useTranslation("translation", {
@@ -44,42 +44,43 @@ function CommunityParticipationPage(): JSX.Element {
 
   return (
     <S.Container>
-      <S.CommunitySection>
-        <S.InnerContainer>
-          <IconAndText icon={RibonIconSquared} text={integration?.name} />
-          <S.Title>{t("title")}</S.Title>
-          <S.Divider />
+      <S.InnerContainer>
+        <IconAndText icon={RibonIconSquared} text={integration?.name} />
+        <S.Title>{t("title")}</S.Title>
+        <S.Divider />
 
-          <RangeDatePicker
-            startDate={startDate}
-            endDate={endDate}
-            handleStartDateChange={setStartDate}
-            handleEndDateChange={setEndDate}
-            customDateFormat={t("datePickerFormat")}
-          />
+        <RangeDatePicker
+          startDate={startDate}
+          endDate={endDate}
+          handleStartDateChange={setStartDate}
+          handleEndDateChange={setEndDate}
+          customDateFormat={t("datePickerFormat")}
+        />
 
-          <S.ContentContainer>
-            <S.ContentDiv>
-              <S.ParticipatingDonorsText>
-                {integrationImpact?.totalDonors}
-              </S.ParticipatingDonorsText>
-              <S.ParticipatingDonorsSubtext>
-                {t("participatingDonors")}
-              </S.ParticipatingDonorsSubtext>
-            </S.ContentDiv>
+        <S.ContentContainer>
+          <S.ContentDiv>
+            <S.ParticipatingDonorsText>
+              {integrationImpact?.totalDonors}
+            </S.ParticipatingDonorsText>
+            <S.ParticipatingDonorsSubtext>
+              {t("participatingDonors")}
+            </S.ParticipatingDonorsSubtext>
+          </S.ContentDiv>
 
-            <S.ContentDiv>
-              <S.ParticipatingDonorsText>
-                {integrationImpact?.totalDonations}
-              </S.ParticipatingDonorsText>
-              <S.ParticipatingDonorsSubtext>
-                {t("donationsMade")}
-              </S.ParticipatingDonorsSubtext>
-            </S.ContentDiv>
-          </S.ContentContainer>
-        </S.InnerContainer>
-      </S.CommunitySection>
-      <ProjectImpactSectionPage integrationImpact={integrationImpact} />
+          <S.ContentDiv>
+            <S.ParticipatingDonorsText>
+              {integrationImpact?.totalDonations}
+            </S.ParticipatingDonorsText>
+            <S.ParticipatingDonorsSubtext>
+              {t("donationsMade")}
+            </S.ParticipatingDonorsSubtext>
+          </S.ContentDiv>
+        </S.ContentContainer>
+
+        <S.GrayContainer>
+          <ProjectImpactSectionPage integrationImpact={integrationImpact} />
+        </S.GrayContainer>
+      </S.InnerContainer>
     </S.Container>
   );
 }
