@@ -22,7 +22,11 @@ function CommunityParticipationPage(): JSX.Element {
   const { searchParams } = new URL(window.location.href);
   const integrationId = searchParams.get("integration_id");
 
-  if (!integrationId) {
+  if (
+    !integrationId ||
+    integrationId === "null" ||
+    integrationId === "undefined"
+  ) {
     navigate("/error?code=missing_integration_id_param");
   }
 
