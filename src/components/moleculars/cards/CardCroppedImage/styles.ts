@@ -3,6 +3,7 @@ import WaveCut from "assets/images/wave-cut.svg";
 import { defaultSubtitleMedium } from "styles/typography/default";
 
 export const Container = styled.div`
+  position: relative;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -32,6 +33,7 @@ export const SupportImage = styled.img`
   gap: 8px;
   object-fit: cover;
   background-color: ${({ theme }) => theme.colors.gray10};
+  filter: brightness(0.5);
 `;
 
 export const MainText = styled.h1`
@@ -42,4 +44,18 @@ export const SubText = styled.h2`
   ${defaultSubtitleMedium}
 
   color: ${({ theme }) => theme.colors.gray30};
+`;
+
+export const InternalImage = styled.img`
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: calc(50% - 60px);
+  margin-top: 8px;
+  z-index: 1;
+  filter: grayscale(100%) brightness(68%) saturate(0%) contrast(1000%);
+  -webkit-filter: grayscale(100%) brightness(68%) saturate(0%) contrast(1000%);
+  -moz-filter: grayscale(100%) brightness(68%) saturate(0%) contrast(1000%);
+
+  mix-blend-mode: screen;
 `;
