@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import PHC from "assets/images/ngo_fixture.jpeg";
+import Logo from "assets/images/ngo_logo_fixture.jpeg";
 import CardCroppedImage, { Props } from ".";
 
 export default {
@@ -20,5 +20,5 @@ Default.args = {
   secondaryText: "CardCroppedImage",
   image:
     "https://s2.glbimg.com/2UBMGRs01DSMHsfaFz-7aIMOYVQ=/e.glbimg.com/og/ed/f/original/2019/02/25/oscar_wilde_sarony.jpg",
-  internalImage: PHC,
+  internalImage: Logo,
 };
