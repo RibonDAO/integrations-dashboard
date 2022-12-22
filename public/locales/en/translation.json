@@ -12,5 +12,12 @@
     "invalidDateRangeModalTitle": "Invalid period",
     "invalidDateRangeModalBody": "Select a period with a start date previous to the end date.",
     "invalidDateRangeModalClose": "Ok"
+  },
+  "errorPage": {
+    "title": "Oops! There's something wrong.",
+    "errors": {
+      "generic": "Something went wrong. Please try again later.",
+      "missing_integration_id_param": "The integration id is missing. You must provide an integration id to access this page."
+    }
   }
 }
