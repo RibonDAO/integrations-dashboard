@@ -12,5 +12,12 @@
     "invalidDateRangeModalTitle": "Período inválido",
     "invalidDateRangeModalBody": "Selecione um período com data inicial anterior à data final.",
     "invalidDateRangeModalClose": "Entendi"
+  },
+  "errorPage": {
+    "title": "Oops! Algo deu errado!",
+    "errors": {
+      "generic": "Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.",
+      "missing_integration_id_param": "O parâmetro de ID da integração não foi encontrado. Por favor, verifique a URL."
+    }
   }
 }
