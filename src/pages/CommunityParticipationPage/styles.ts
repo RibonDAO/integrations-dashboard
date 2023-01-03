@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import Shape from "assets/images/green-diamond-shape.svg";
-import {
-  stylizedHeadingLarge,
-  stylizedTitleLarge,
-} from "styles/typography/stylized";
+import { stylizedHeadingLarge } from "styles/typography/stylized";
 import {
   defaultHeadingLarge,
   defaultParagraphMedium,
@@ -11,7 +8,7 @@ import {
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
+  min-height: 70vh;
   background: url(${Shape}) no-repeat;
   background-position: top right;
   background-size: 200px;
@@ -39,12 +36,6 @@ export const Title = styled.h6`
   ${stylizedHeadingLarge};
   margin: 8px 0 24px 0;
   color: ${({ theme }) => theme.colors.darkGray};
-`;
-
-export const TitleResults = styled.h6`
-  ${stylizedTitleLarge};
-  margin: 8px 0 24px 0;
-  color: ${({ theme }) => theme.colors.green40};
 `;
 
 export const ParticipatingDonorsText = styled.h6`
