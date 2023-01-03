@@ -54,6 +54,7 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
                 image={nonProfit.backgroundImage}
                 secondaryText={nonProfit.impactDescription}
                 mainText={impact}
+                internalImage={nonProfit.logo}
               />
             </div>
           ),
