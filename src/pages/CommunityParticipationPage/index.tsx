@@ -7,10 +7,10 @@ import {
   useIntegrationImpact,
   useIntegration,
 } from "@ribon.io/shared/dist/hooks";
-import CardCroppedImage from "components/moleculars/cards/CardCroppedImage";
+import { useNavigate } from "react-router-dom";
 import { formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
-import { useNavigate } from "react-router-dom";
+import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
@@ -90,22 +90,9 @@ function CommunityParticipationPage(): JSX.Element {
         </S.ContentContainer>
 
         <S.GrayContainer>
-          <S.TitleResults>{t("impactPerProject")}</S.TitleResults>
-          <S.ImpactContainer>
-            {!isLoading &&
-              integrationImpact?.impactPerNonProfit.map(
-                ({ impact, nonProfit }: any) => (
-                  <div key={nonProfit.id}>
-                    <CardCroppedImage
-                      image={nonProfit.backgroundImage}
-                      secondaryText={nonProfit.impactDescription}
-                      mainText={impact}
-                      internalImage={nonProfit.logo}
-                    />
-                  </div>
-                ),
-              )}
-          </S.ImpactContainer>
+          {!isLoading && (
+            <ProjectImpactSectionPage integrationImpact={integrationImpact} />
+          )}
         </S.GrayContainer>
       </S.InnerContainer>
     </S.Container>

@@ -6,6 +6,12 @@
     "impactPerProject": "Results per Project",
     "datePickerFormat": "MM/dd/yyyy"
   },
+  "impactPerProjectSection": {
+    "title": "Results per Project",
+    "impactButton": "Impact",
+    "donorsButton": "Donors",
+    "donationsButton": "Donations"
+  },
   "rangeDatePicker": {
     "from": "From",
     "to": "to",
