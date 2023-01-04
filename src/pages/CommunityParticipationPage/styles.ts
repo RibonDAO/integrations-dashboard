@@ -3,7 +3,7 @@ import Shape from "assets/images/green-diamond-shape.svg";
 import { stylizedHeadingLarge } from "styles/typography/stylized";
 import {
   defaultHeadingLarge,
-  defaultParagraphMedium,
+  defaultParagraphMedium, defaultParagraphSmall, defaultTitleLarge,
 } from "styles/typography/default";
 
 export const Container = styled.div`
@@ -45,8 +45,21 @@ export const ParticipatingDonorsText = styled.h6`
   color: ${({ theme }) => theme.colors.orange20};
 `;
 
+export const ParticipatingDonorsTrendText = styled.h6`
+  ${defaultTitleLarge};
+  margin: 28px 0 0 0;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
 export const ParticipatingDonorsSubtext = styled.p`
   ${defaultParagraphMedium};
+  margin: 4px 0 0 0;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
+export const ParticipatingDonorsTrendSubtext = styled.p`
+  ${defaultParagraphSmall};
   margin: 4px 0 0 0;
   color: ${({ theme }) => theme.colors.gray30};
 `;
