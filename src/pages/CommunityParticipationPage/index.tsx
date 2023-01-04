@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import {daysBetween, formatDate, previousDate} from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
+import {formatTrend} from "lib/textFormatter";
 import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
 import * as S from "./styles";
 
@@ -54,6 +55,8 @@ function CommunityParticipationPage(): JSX.Element {
     refetch();
   }, [startDate, endDate]);
 
+
+
   return (
     <S.Container>
       <S.InnerContainer>
@@ -78,7 +81,7 @@ function CommunityParticipationPage(): JSX.Element {
               {t("participatingDonors")}
             </S.ParticipatingDonorsSubtext>
             <S.ParticipatingDonorsTrendText>
-              {`${integrationImpact?.totalDonorsTrend}%` || "-"}
+              {formatTrend(integrationImpact?.totalDonorsTrend)}
             </S.ParticipatingDonorsTrendText>
             <S.ParticipatingDonorsTrendSubtext>
               {t("participatingDonorsTrend", {value: daysBetween(startDate, endDate)})}
@@ -92,6 +95,12 @@ function CommunityParticipationPage(): JSX.Element {
             <S.ParticipatingDonorsSubtext>
               {t("donationsMade")}
             </S.ParticipatingDonorsSubtext>
+            <S.ParticipatingDonorsTrendText>
+              {formatTrend(integrationImpact?.totalDonationsTrend)}
+            </S.ParticipatingDonorsTrendText>
+            <S.ParticipatingDonorsTrendSubtext>
+              {t("participatingDonorsTrend", {value: daysBetween(startDate, endDate)})}
+            </S.ParticipatingDonorsTrendSubtext>
           </S.ContentDiv>
         </S.ContentContainer>
 
