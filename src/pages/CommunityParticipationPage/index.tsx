@@ -77,7 +77,7 @@ function CommunityParticipationPage(): JSX.Element {
               {t("participatingDonors")}
             </S.ParticipatingDonorsSubtext>
             <S.ParticipatingDonorsTrendText>
-              <PlusMinus value={integrationImpact?.totalDonorsTrend} />
+              <PlusMinus value={integrationImpact?.totalDonorsTrend} />{" "}
               {formatTrend(integrationImpact?.totalDonorsTrend)}
             </S.ParticipatingDonorsTrendText>
             <S.ParticipatingDonorsTrendSubtext>
@@ -95,7 +95,7 @@ function CommunityParticipationPage(): JSX.Element {
               {t("donationsMade")}
             </S.ParticipatingDonorsSubtext>
             <S.ParticipatingDonorsTrendText>
-              <PlusMinus value={integrationImpact?.totalDonationsTrend} />
+              <PlusMinus value={integrationImpact?.totalDonationsTrend} />{" "}
               {formatTrend(integrationImpact?.totalDonationsTrend)}
             </S.ParticipatingDonorsTrendText>
             <S.ParticipatingDonorsTrendSubtext>
