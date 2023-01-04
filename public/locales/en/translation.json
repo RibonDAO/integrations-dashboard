@@ -11,7 +11,9 @@
     "title": "Results per Project",
     "impactButton": "Impact",
     "donorsButton": "Donors",
-    "donationsButton": "Donations"
+    "donationsButton": "Donations",
+    "participatingDonors": "participating donors",
+    "donationsMade": "donations made"
   },
   "rangeDatePicker": {
     "from": "From",
