@@ -1,9 +1,9 @@
 import CommunityParticipationPage from "pages/CommunityParticipationPage";
 import ErrorPage from "pages/ErrorPage";
-import {Routes, Route, Navigate, useLocation} from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 function RoutesComponent(): JSX.Element {
-  const {search} = useLocation();
+  const { search } = useLocation();
 
   return (
     <Routes>
@@ -11,7 +11,7 @@ function RoutesComponent(): JSX.Element {
 
       <Route path="/error" element={<ErrorPage />} />
 
-      <Route path="*" element={<Navigate to={{pathname: "/", search}} />} />
+      <Route path="*" element={<Navigate to={{ pathname: "/", search }} />} />
     </Routes>
   );
 }
