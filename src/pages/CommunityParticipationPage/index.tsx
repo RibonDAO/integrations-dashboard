@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { daysBetween, formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
 import { formatTrend } from "lib/textFormatter";
+import PlusMinus from "components/atomics/PlusMinus";
 import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
 import * as S from "./styles";
-import PlusMinus from "../../components/atomics/PlusMinus";
 
 function CommunityParticipationPage(): JSX.Element {
   const { t } = useTranslation("translation", {
