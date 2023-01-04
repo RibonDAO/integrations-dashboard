@@ -82,16 +82,17 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
         nameExtractor={(element) => element.text}
       />
       <S.ImpactContainer>
-        {currentTab().data.map((item: any) => (
-          <div key={item.nonProfit.id}>
-            <CardCroppedImage
-              image={item.nonProfit.backgroundImage}
-              internalImage={item.nonProfit.logo}
-              mainText={currentTab().parse(item).value}
-              secondaryText={currentTab().parse(item).description}
-            />
-          </div>
-        ))}
+        {integrationImpact &&
+          currentTab().data.map((item: any) => (
+            <div key={item.nonProfit.id}>
+              <CardCroppedImage
+                image={item.nonProfit.backgroundImage}
+                internalImage={item.nonProfit.logo}
+                mainText={currentTab().parse(item).value}
+                secondaryText={currentTab().parse(item).description}
+              />
+            </div>
+          ))}
       </S.ImpactContainer>
     </S.Container>
   );
