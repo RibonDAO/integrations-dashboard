@@ -42,7 +42,7 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
     },
   ];
 
-  const currentTabOptions = [
+  const tabOptions = [
     {
       data: integrationImpact?.impactPerNonProfit,
       parse: (item: any) => ({
@@ -66,7 +66,7 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
     },
   ];
 
-  const currentTab = () => currentTabOptions[selectedButtonIndex];
+  const currentTab = () => tabOptions[selectedButtonIndex];
 
   const handleButtonChange = (element: any, index: number) => {
     setSelectedButtonIndex(index);
