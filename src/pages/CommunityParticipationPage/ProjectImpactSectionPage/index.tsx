@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import CardCroppedImage from "components/moleculars/cards/CardCroppedImage";
 import GroupButtons from "components/sections/GroupButtons";
 import ImpactOn from "assets/icons/check-spark-dark-green.svg";
@@ -17,6 +18,8 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
   const { t } = useTranslation("translation", {
     keyPrefix: "impactPerProjectSection",
   });
+
+  const [selectedButtonIndex, setSelectedButtonIndex] = useState(0);
 
   const filterOptions = [
     {
@@ -39,26 +42,57 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
     },
   ];
 
+  const tabOptions = [
+    {
+      data: integrationImpact?.impactPerNonProfit,
+      parse: (item: any) => ({
+        description: item?.nonProfit?.impactDescription,
+        value: item?.impact || 0,
+      }),
+    },
+    {
+      data: integrationImpact?.donorsPerNonProfit,
+      parse: (item: any) => ({
+        description: t("participatingDonors"),
+        value: item?.donors || 0,
+      }),
+    },
+    {
+      data: integrationImpact?.donationsPerNonProfit,
+      parse: (item: any) => ({
+        description: t("donationsMade"),
+        value: item?.donations || 0,
+      }),
+    },
+  ];
+
+  const currentTab = () => tabOptions[selectedButtonIndex];
+
+  const handleButtonChange = (element: any, index: number) => {
+    setSelectedButtonIndex(index);
+  };
+
   return (
     <S.Container>
       <S.Title>{t("title")}</S.Title>
       <GroupButtons
         elements={filterOptions}
+        onChange={handleButtonChange}
+        indexSelected={selectedButtonIndex}
         nameExtractor={(element) => element.text}
       />
       <S.ImpactContainer>
-        {integrationImpact?.impactPerNonProfit.map(
-          ({ impact, nonProfit }: any) => (
-            <div key={nonProfit.id}>
+        {integrationImpact &&
+          currentTab().data.map((item: any) => (
+            <div key={item.nonProfit.id}>
               <CardCroppedImage
-                image={nonProfit.backgroundImage}
-                secondaryText={nonProfit.impactDescription}
-                mainText={impact}
-                internalImage={nonProfit.logo}
+                image={item.nonProfit.backgroundImage}
+                internalImage={item.nonProfit.logo}
+                mainText={currentTab().parse(item).value}
+                secondaryText={currentTab().parse(item).description}
               />
             </div>
-          ),
-        )}
+          ))}
       </S.ImpactContainer>
     </S.Container>
   );

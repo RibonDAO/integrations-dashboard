@@ -3,6 +3,7 @@ export interface Breakpoint {
   mobileMedium: string;
   pad: string;
   desktop: string;
+  desktopLarge: string;
 }
 
 interface ThemeType {
@@ -73,6 +74,7 @@ const theme: ThemeType = {
     mobileMedium: "374px",
     pad: "600px",
     desktop: "1024px",
+    desktopLarge: "1440px",
   },
 };
 
