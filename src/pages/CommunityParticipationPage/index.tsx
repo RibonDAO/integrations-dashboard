@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useIntegrationImpact, useIntegration } from "@ribon.io/shared/hooks";
 import { useNavigate } from "react-router-dom";
 import { daysBetween, formatDate, previousDate } from "lib/dateFormatter";
+import ScrollIndicator from "components/atomics/ScrollIndicator";
 import { updateLocationSearch } from "lib/locationSearch";
 import { formatTrend } from "lib/textFormatter";
 import PlusMinus from "components/atomics/PlusMinus";
@@ -112,6 +113,7 @@ function CommunityParticipationPage(): JSX.Element {
           )}
         </S.GrayContainer>
       </S.InnerContainer>
+      <ScrollIndicator />
     </S.Container>
   );
 }
