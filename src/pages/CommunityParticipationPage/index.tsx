@@ -8,7 +8,7 @@ import {
   useIntegration,
 } from "@ribon.io/shared/hooks";
 import { useNavigate } from "react-router-dom";
-import { formatDate, previousDate } from "lib/dateFormatter";
+import {daysBetween, formatDate, previousDate} from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
 import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
 import * as S from "./styles";
@@ -77,6 +77,12 @@ function CommunityParticipationPage(): JSX.Element {
             <S.ParticipatingDonorsSubtext>
               {t("participatingDonors")}
             </S.ParticipatingDonorsSubtext>
+            <S.ParticipatingDonorsTrendText>
+              {`${integrationImpact?.totalDonorsTrend}%` || "-"}
+            </S.ParticipatingDonorsTrendText>
+            <S.ParticipatingDonorsTrendSubtext>
+              {t("participatingDonorsTrend", {value: daysBetween(startDate, endDate)})}
+            </S.ParticipatingDonorsTrendSubtext>
           </S.ContentDiv>
 
           <S.ContentDiv>

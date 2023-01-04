@@ -13,3 +13,7 @@ export function formatDate(date: Date) {
 export function previousDate(date: Date, days: number) {
   return new Date(new Date(date).setDate(new Date(date).getDate() - days));
 }
+
+export function daysBetween(startDate: Date, endDate: Date) {
+  return Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24))
+}

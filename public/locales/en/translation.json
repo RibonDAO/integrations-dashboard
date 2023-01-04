@@ -2,6 +2,7 @@
   "communityParticipationPage": {
     "title": "Community Participation",
     "participatingDonors": "participating donors",
+    "participatingDonorsTrend": "compared to {{value}} days before",
     "donationsMade": "donations made",
     "impactPerProject": "Results per Project",
     "datePickerFormat": "MM/dd/yyyy"
