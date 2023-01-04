@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import {
   useIntegrationImpact,
   useIntegration,
-} from "@ribon.io/shared/dist/hooks";
+} from "@ribon.io/shared/hooks";
 import { useNavigate } from "react-router-dom";
 import { formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
