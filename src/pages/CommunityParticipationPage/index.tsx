@@ -3,16 +3,14 @@ import { useEffect, useState } from "react";
 import RibonIconSquared from "assets/icons/ribon-icon-squared.svg";
 import RangeDatePicker from "components/moleculars/RangeDatePicker";
 import { useTranslation } from "react-i18next";
-import {
-  useIntegrationImpact,
-  useIntegration,
-} from "@ribon.io/shared/hooks";
+import { useIntegrationImpact, useIntegration } from "@ribon.io/shared/hooks";
 import { useNavigate } from "react-router-dom";
-import {daysBetween, formatDate, previousDate} from "lib/dateFormatter";
+import { daysBetween, formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
-import {formatTrend} from "lib/textFormatter";
+import { formatTrend } from "lib/textFormatter";
 import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
 import * as S from "./styles";
+import PlusMinus from "../../components/atomics/PlusMinus";
 
 function CommunityParticipationPage(): JSX.Element {
   const { t } = useTranslation("translation", {
@@ -55,8 +53,6 @@ function CommunityParticipationPage(): JSX.Element {
     refetch();
   }, [startDate, endDate]);
 
-
-
   return (
     <S.Container>
       <S.InnerContainer>
@@ -81,10 +77,13 @@ function CommunityParticipationPage(): JSX.Element {
               {t("participatingDonors")}
             </S.ParticipatingDonorsSubtext>
             <S.ParticipatingDonorsTrendText>
+              <PlusMinus value={integrationImpact?.totalDonorsTrend} />
               {formatTrend(integrationImpact?.totalDonorsTrend)}
             </S.ParticipatingDonorsTrendText>
             <S.ParticipatingDonorsTrendSubtext>
-              {t("participatingDonorsTrend", {value: daysBetween(startDate, endDate)})}
+              {t("participatingDonorsTrend", {
+                value: daysBetween(startDate, endDate),
+              })}
             </S.ParticipatingDonorsTrendSubtext>
           </S.ContentDiv>
 
@@ -96,10 +95,13 @@ function CommunityParticipationPage(): JSX.Element {
               {t("donationsMade")}
             </S.ParticipatingDonorsSubtext>
             <S.ParticipatingDonorsTrendText>
+              <PlusMinus value={integrationImpact?.totalDonationsTrend} />
               {formatTrend(integrationImpact?.totalDonationsTrend)}
             </S.ParticipatingDonorsTrendText>
             <S.ParticipatingDonorsTrendSubtext>
-              {t("participatingDonorsTrend", {value: daysBetween(startDate, endDate)})}
+              {t("participatingDonorsTrend", {
+                value: daysBetween(startDate, endDate),
+              })}
             </S.ParticipatingDonorsTrendSubtext>
           </S.ContentDiv>
         </S.ContentContainer>
