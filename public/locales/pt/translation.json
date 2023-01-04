@@ -28,5 +28,8 @@
       "generic": "Ocorreu um erro inesperado. Por favor, tente novamente mais tarde.",
       "missing_integration_id_param": "O parâmetro de ID da integração não foi encontrado. Por favor, verifique a URL."
     }
+  },
+  "scrollIndicator": {
+    "learnMore": "Veja mais"
   }
 }
