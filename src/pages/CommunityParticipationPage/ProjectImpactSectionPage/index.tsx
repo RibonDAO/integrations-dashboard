@@ -42,37 +42,34 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
     },
   ];
 
+  const currentTabOptions = [
+    {
+      data: integrationImpact?.impactPerNonProfit,
+      parse: (item: any) => ({
+        description: item?.nonProfit?.impactDescription,
+        value: item?.impact || 0,
+      }),
+    },
+    {
+      data: integrationImpact?.donorsPerNonProfit,
+      parse: (item: any) => ({
+        description: t("participatingDonors"),
+        value: item?.donors || 0,
+      }),
+    },
+    {
+      data: integrationImpact?.donationsPerNonProfit,
+      parse: (item: any) => ({
+        description: t("donationsMade"),
+        value: item?.donations || 0,
+      }),
+    },
+  ];
+
+  const currentTab = () => currentTabOptions[selectedButtonIndex];
+
   const handleButtonChange = (element: any, index: number) => {
     setSelectedButtonIndex(index);
-  };
-
-  const currentTabData = () => {
-    switch (selectedButtonIndex) {
-      case 0:
-        return {
-          object: integrationImpact?.impactPerNonProfit,
-          currentItem: (item: any) => ({
-            description: item?.nonProfit?.impactDescription,
-            value: item?.impact || 0,
-          }),
-        };
-      case 1:
-        return {
-          object: integrationImpact?.donorsPerNonProfit,
-          currentItem: (item: any) => ({
-            description: t("participatingDonors"),
-            value: item?.donors || 0,
-          }),
-        };
-      default:
-        return {
-          object: integrationImpact?.donationsPerNonProfit,
-          currentItem: (item: any) => ({
-            description: t("donationsMade"),
-            value: item?.donations || 0,
-          }),
-        };
-    }
   };
 
   return (
@@ -85,13 +82,13 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
         nameExtractor={(element) => element.text}
       />
       <S.ImpactContainer>
-        {currentTabData()?.object.map((item: any) => (
+        {currentTab().data.map((item: any) => (
           <div key={item.nonProfit.id}>
             <CardCroppedImage
               image={item.nonProfit.backgroundImage}
               internalImage={item.nonProfit.logo}
-              mainText={currentTabData().currentItem(item).value}
-              secondaryText={currentTabData().currentItem(item).description}
+              mainText={currentTab().parse(item).value}
+              secondaryText={currentTab().parse(item).description}
             />
           </div>
         ))}
