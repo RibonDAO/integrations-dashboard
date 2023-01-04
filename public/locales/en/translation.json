@@ -28,5 +28,8 @@
       "generic": "Something went wrong. Please try again later.",
       "missing_integration_id_param": "The integration id is missing. You must provide an integration id to access this page."
     }
+  },
+  "scrollIndicator": {
+    "learnMore": "Learn more"
   }
 }
