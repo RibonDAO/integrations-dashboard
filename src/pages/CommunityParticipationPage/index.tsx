@@ -3,13 +3,12 @@ import { useEffect, useState } from "react";
 import RibonIconSquared from "assets/icons/ribon-icon-squared.svg";
 import RangeDatePicker from "components/moleculars/RangeDatePicker";
 import { useTranslation } from "react-i18next";
-import {
-  useIntegrationImpact,
-  useIntegration,
-} from "@ribon.io/shared/dist/hooks";
+import { useIntegrationImpact, useIntegration } from "@ribon.io/shared/hooks";
 import { useNavigate } from "react-router-dom";
-import { formatDate, previousDate } from "lib/dateFormatter";
+import { daysBetween, formatDate, previousDate } from "lib/dateFormatter";
 import { updateLocationSearch } from "lib/locationSearch";
+import { formatTrend } from "lib/textFormatter";
+import PlusMinus from "components/atomics/PlusMinus";
 import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
 import * as S from "./styles";
 
@@ -77,6 +76,15 @@ function CommunityParticipationPage(): JSX.Element {
             <S.ParticipatingDonorsSubtext>
               {t("participatingDonors")}
             </S.ParticipatingDonorsSubtext>
+            <S.ParticipatingDonorsTrendText>
+              <PlusMinus value={integrationImpact?.totalDonorsTrend} />{" "}
+              {formatTrend(integrationImpact?.totalDonorsTrend)}
+            </S.ParticipatingDonorsTrendText>
+            <S.ParticipatingDonorsTrendSubtext>
+              {t("participatingDonorsTrend", {
+                value: daysBetween(startDate, endDate),
+              })}
+            </S.ParticipatingDonorsTrendSubtext>
           </S.ContentDiv>
 
           <S.ContentDiv>
@@ -86,6 +94,15 @@ function CommunityParticipationPage(): JSX.Element {
             <S.ParticipatingDonorsSubtext>
               {t("donationsMade")}
             </S.ParticipatingDonorsSubtext>
+            <S.ParticipatingDonorsTrendText>
+              <PlusMinus value={integrationImpact?.totalDonationsTrend} />{" "}
+              {formatTrend(integrationImpact?.totalDonationsTrend)}
+            </S.ParticipatingDonorsTrendText>
+            <S.ParticipatingDonorsTrendSubtext>
+              {t("participatingDonorsTrend", {
+                value: daysBetween(startDate, endDate),
+              })}
+            </S.ParticipatingDonorsTrendSubtext>
           </S.ContentDiv>
         </S.ContentContainer>
 

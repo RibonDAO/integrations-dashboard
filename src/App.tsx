@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { QueryClientComponent } from "@ribon.io/shared/dist/hooks";
+import { QueryClientComponent } from "@ribon.io/shared/hooks";
 import RoutesComponent from "config/routes";
 import GlobalStyle from "./styles/globalStyle";
 import ModalProvider from "./contexts/modalContext";
