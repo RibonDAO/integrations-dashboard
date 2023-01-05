@@ -5,7 +5,9 @@
     "participatingDonorsTrend": "em relação aos {{value}} dias anteriores",
     "donationsMade": "doações realizadas",
     "impactPerProject": "Resultados por projeto",
-    "datePickerFormat": "dd/MM/yyyy"
+    "datePickerFormat": "dd/MM/yyyy",
+    "donationsPerDay": "total de doações por dia (média)",
+    "donorsPerDay": "total de doadores por dia (média)"
   },
   "impactPerProjectSection": {
     "title": "Resultados por projeto",
