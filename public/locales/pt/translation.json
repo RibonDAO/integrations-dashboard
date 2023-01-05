@@ -7,7 +7,9 @@
     "impactPerProject": "Resultados por projeto",
     "datePickerFormat": "dd/MM/yyyy",
     "donationsPerDay": "total de doações por dia (média)",
-    "donorsPerDay": "total de doadores por dia (média)"
+    "donorsPerDay": "total de doadores por dia (média)",
+    "newDonors": "novos doadores",
+    "returningDonors": "doadores recorrentes"
   },
   "impactPerProjectSection": {
     "title": "Resultados por projeto",
