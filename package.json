@@ -126,6 +126,10 @@
       "!<rootDir>/src/i18n.ts",
       "!<rootDir>/src/reportWebVitals.ts",
       "!<rootDir>/src/index.tsx"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^react$": "<rootDir>/node_modules/react",
+      "^react-dom$": "<rootDir>/node_modules/react-dom"
+    }
   }
 }
