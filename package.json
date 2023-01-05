@@ -51,10 +51,10 @@
     "yarn": "^1.22.19"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "testCoverage": "react-scripts test --coverage --watchAll=false",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "testCoverage": "craco test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.ts src/**/*.tsx && prettier --check src/**/*.ts src/**/*.tsx",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
@@ -82,6 +82,7 @@
     "@chakra-ui/storybook-addon": "^4.0.3",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@craco/craco": "^7.0.0",
     "@storybook/addon-actions": "^6.4.13",
     "@storybook/addon-essentials": "^6.4.13",
     "@storybook/addon-links": "^6.4.13",
