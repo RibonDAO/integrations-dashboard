@@ -54,6 +54,13 @@ function CommunityParticipationPage(): JSX.Element {
     refetch();
   }, [startDate, endDate]);
 
+  const averagePerDay = (value: number) => {
+    const days = daysBetween(startDate, endDate);
+    const result = Math.round(Number(value) / days);
+
+    return Number.isNaN(result) ? "-" : result;
+  };
+
   return (
     <S.Container>
       <S.InnerContainer>
@@ -71,39 +78,59 @@ function CommunityParticipationPage(): JSX.Element {
 
         <S.ContentContainer>
           <S.ContentDiv>
-            <S.ParticipatingDonorsText>
-              {integrationImpact?.totalDonors || 0}
-            </S.ParticipatingDonorsText>
-            <S.ParticipatingDonorsSubtext>
-              {t("participatingDonors")}
-            </S.ParticipatingDonorsSubtext>
-            <S.ParticipatingDonorsTrendText>
-              <PlusMinus value={integrationImpact?.totalDonorsTrend} />{" "}
-              {formatTrend(integrationImpact?.totalDonorsTrend)}
-            </S.ParticipatingDonorsTrendText>
-            <S.ParticipatingDonorsTrendSubtext>
-              {t("participatingDonorsTrend", {
-                value: daysBetween(startDate, endDate),
-              })}
-            </S.ParticipatingDonorsTrendSubtext>
+            <S.InnerContentDiv>
+              <S.ParticipatingDonorsText>
+                {integrationImpact?.totalDonors || 0}
+              </S.ParticipatingDonorsText>
+              <S.ParticipatingDonorsSubtext>
+                {t("participatingDonors")}
+              </S.ParticipatingDonorsSubtext>
+              <S.ParticipatingDonorsTrendText>
+                <PlusMinus value={integrationImpact?.totalDonorsTrend} />{" "}
+                {formatTrend(integrationImpact?.totalDonorsTrend)}
+              </S.ParticipatingDonorsTrendText>
+              <S.ParticipatingDonorsTrendSubtext>
+                {t("participatingDonorsTrend", {
+                  value: daysBetween(startDate, endDate),
+                })}
+              </S.ParticipatingDonorsTrendSubtext>
+            </S.InnerContentDiv>
           </S.ContentDiv>
 
           <S.ContentDiv>
-            <S.ParticipatingDonorsText>
-              {integrationImpact?.totalDonations || 0}
-            </S.ParticipatingDonorsText>
-            <S.ParticipatingDonorsSubtext>
-              {t("donationsMade")}
-            </S.ParticipatingDonorsSubtext>
-            <S.ParticipatingDonorsTrendText>
-              <PlusMinus value={integrationImpact?.totalDonationsTrend} />{" "}
-              {formatTrend(integrationImpact?.totalDonationsTrend)}
-            </S.ParticipatingDonorsTrendText>
-            <S.ParticipatingDonorsTrendSubtext>
-              {t("participatingDonorsTrend", {
-                value: daysBetween(startDate, endDate),
-              })}
-            </S.ParticipatingDonorsTrendSubtext>
+            <S.InnerContentDiv>
+              <S.ParticipatingDonorsText>
+                {integrationImpact?.totalDonations || 0}
+              </S.ParticipatingDonorsText>
+              <S.ParticipatingDonorsSubtext>
+                {t("donationsMade")}
+              </S.ParticipatingDonorsSubtext>
+              <S.ParticipatingDonorsTrendText>
+                <PlusMinus value={integrationImpact?.totalDonationsTrend} />{" "}
+                {formatTrend(integrationImpact?.totalDonationsTrend)}
+              </S.ParticipatingDonorsTrendText>
+              <S.ParticipatingDonorsTrendSubtext>
+                {t("participatingDonorsTrend", {
+                  value: daysBetween(startDate, endDate),
+                })}
+              </S.ParticipatingDonorsTrendSubtext>
+            </S.InnerContentDiv>
+            <S.InnerContentDiv>
+              <S.DonorsPerDayText>
+                {integrationImpact
+                  ? averagePerDay(integrationImpact.totalDonors)
+                  : "-"}
+              </S.DonorsPerDayText>
+              <S.DonorsPerDaySubtext>{t("donorsPerDay")}</S.DonorsPerDaySubtext>
+              <S.DonationsPerDayText>
+                {integrationImpact
+                  ? averagePerDay(integrationImpact.totalDonations)
+                  : "-"}
+              </S.DonationsPerDayText>
+              <S.DonationsPerDaySubtext>
+                {t("donationsPerDay")}
+              </S.DonationsPerDaySubtext>
+            </S.InnerContentDiv>
           </S.ContentDiv>
         </S.ContentContainer>
 
