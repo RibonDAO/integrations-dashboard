@@ -7,7 +7,9 @@
     "impactPerProject": "Results per Project",
     "datePickerFormat": "MM/dd/yyyy",
     "donationsPerDay": "total donations per day (average)",
-    "donorsPerDay": "total donors per day (average)"
+    "donorsPerDay": "total donors per day (average)",
+    "newDonors": "new donors",
+    "returningDonors": "returning donors"
   },
   "impactPerProjectSection": {
     "title": "Results per Project",
