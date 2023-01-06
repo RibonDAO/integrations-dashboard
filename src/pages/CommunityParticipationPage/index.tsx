@@ -61,6 +61,12 @@ function CommunityParticipationPage(): JSX.Element {
     return Number.isNaN(result) ? "-" : result;
   };
 
+  const averagePeriod = (value: number, total: number) => {
+    const result = Math.round((Number(value) * 100) / total);
+
+    return Number.isNaN(result) ? "-" : result;
+  };
+
   return (
     <S.Container>
       <S.InnerContainer>
@@ -95,6 +101,31 @@ function CommunityParticipationPage(): JSX.Element {
                 })}
               </S.ParticipatingDonorsTrendSubtext>
             </S.InnerContentDiv>
+
+            <S.InnerContentDiv>
+              <S.NewDonorsText>
+                {integrationImpact ? integrationImpact.totalNewDonors : "-"}{" "}
+              </S.NewDonorsText>
+              <S.NewDonorsSubtext>
+                {t("newDonors")}
+                {` (${averagePeriod(
+                  integrationImpact?.totalNewDonors,
+                  integrationImpact?.totalDonors,
+                )}%)`}
+              </S.NewDonorsSubtext>
+              <S.ReturningDonorsText>
+                {integrationImpact
+                  ? integrationImpact?.totalDonorsRecurrent
+                  : "-"}
+              </S.ReturningDonorsText>
+              <S.ReturningDonorsSubtext>
+                {t("returningDonors")}
+                {` (${averagePeriod(
+                  integrationImpact?.totalDonorsRecurrent,
+                  integrationImpact?.totalDonors,
+                )}%)`}
+              </S.ReturningDonorsSubtext>
+            </S.InnerContentDiv>
           </S.ContentDiv>
 
           <S.ContentDiv>
@@ -118,7 +149,7 @@ function CommunityParticipationPage(): JSX.Element {
             <S.InnerContentDiv>
               <S.DonorsPerDayText>
                 {integrationImpact
-                  ? averagePerDay(integrationImpact.totalDonors)
+                  ? averagePerDay(integrationImpact?.totalDonors)
                   : "-"}
               </S.DonorsPerDayText>
               <S.DonorsPerDaySubtext>{t("donorsPerDay")}</S.DonorsPerDaySubtext>

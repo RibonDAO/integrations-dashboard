@@ -93,6 +93,34 @@ export const DonorsPerDaySubtext = styled.p`
   color: ${({ theme }) => theme.colors.gray30};
 `;
 
+export const NewDonorsText = styled.h6`
+  ${defaultTitleLarge};
+  margin: 28px 0 0 0;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.orange20};
+  opacity: 0.8;
+`;
+
+export const NewDonorsSubtext = styled.p`
+  ${defaultParagraphSmall};
+  margin: 4px 0 0 0;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
+export const ReturningDonorsText = styled.h6`
+  ${defaultTitleLarge};
+  margin: 28px 0 0 0;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.orange20};
+  opacity: 0.8;
+`;
+
+export const ReturningDonorsSubtext = styled.p`
+  ${defaultParagraphSmall};
+  margin: 4px 0 0 0;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
 export const Divider = styled.hr`
   border-top: ${({ theme }) => theme.colors.gray30};
   margin-block: 24px;
