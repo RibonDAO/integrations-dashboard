@@ -57,7 +57,7 @@ function CommunityParticipationPage(): JSX.Element {
   return (
     <S.Container>
       <S.InnerContainer>
-        <IconAndText icon={RibonIconSquared} text={integration?.name} />
+        <IconAndText icon={RibonIconSquared} text={integration?.name || ""} />
         <S.Title>{t("title")}</S.Title>
         <S.Divider />
 
@@ -79,7 +79,7 @@ function CommunityParticipationPage(): JSX.Element {
             </S.ParticipatingDonorsSubtext>
             <S.ParticipatingDonorsTrendText>
               <PlusMinus value={integrationImpact?.totalDonorsTrend} />{" "}
-              {formatTrend(integrationImpact?.totalDonorsTrend)}
+              {formatTrend(integrationImpact?.totalDonorsTrend || 0)}
             </S.ParticipatingDonorsTrendText>
             <S.ParticipatingDonorsTrendSubtext>
               {t("participatingDonorsTrend", {
@@ -97,7 +97,7 @@ function CommunityParticipationPage(): JSX.Element {
             </S.ParticipatingDonorsSubtext>
             <S.ParticipatingDonorsTrendText>
               <PlusMinus value={integrationImpact?.totalDonationsTrend} />{" "}
-              {formatTrend(integrationImpact?.totalDonationsTrend)}
+              {formatTrend(integrationImpact?.totalDonationsTrend || 0)}
             </S.ParticipatingDonorsTrendText>
             <S.ParticipatingDonorsTrendSubtext>
               {t("participatingDonorsTrend", {
