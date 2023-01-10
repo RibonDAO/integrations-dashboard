@@ -7,8 +7,8 @@ import * as S from "./styles";
 
 type Props = {
   integrationImpact: any;
-  startDate: any;
-  endDate: any;
+  startDate: Date;
+  endDate: Date;
 };
 
 function NumbersSection({
