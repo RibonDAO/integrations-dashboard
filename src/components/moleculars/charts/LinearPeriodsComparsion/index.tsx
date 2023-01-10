@@ -23,14 +23,14 @@ export type Props = {
   daysOffset: number;
 };
 
-const LinearPeriodsComparsion = ({
+function LinearPeriodsComparsion({
   title,
   color = theme.colors.orange30,
   currentPeriodData,
   previousPeriodData,
   labels,
   daysOffset,
-}: Props): JSX.Element => {
+}: Props): JSX.Element {
   const { t } = useTranslation("translation", {
     keyPrefix: "linearPeriodsComparsion",
   });
@@ -100,6 +100,5 @@ const LinearPeriodsComparsion = ({
       </S.LegendsContainer>
     </S.Container>
   );
-};
-
+}
 export default LinearPeriodsComparsion;
