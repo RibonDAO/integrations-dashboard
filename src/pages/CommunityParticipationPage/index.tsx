@@ -11,6 +11,7 @@ import { updateLocationSearch } from "lib/locationSearch";
 import { formatTrend } from "lib/textFormatter";
 import PlusMinus from "components/atomics/PlusMinus";
 import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
+import ChartsSection from "./ChartsSection";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
@@ -164,7 +165,10 @@ function CommunityParticipationPage(): JSX.Element {
             </S.InnerContentDiv>
           </S.ContentDiv>
         </S.ContentContainer>
-
+        <ChartsSection
+          integrationImpact={integrationImpact}
+          daysOffset={daysBetween(startDate, endDate)}
+        />
         <S.GrayContainer>
           {!isLoading && (
             <ProjectImpactSectionPage integrationImpact={integrationImpact} />
