@@ -19,6 +19,14 @@
     "participatingDonors": "doadores participantes",
     "donationsMade": "doações realizadas"
   },
+  "chartsSection": {
+    "donorsInThePeriod": "Doadores no período",
+    "donationsInThePeriod": "Doações no período"
+  },
+  "linearPeriodsComparsion": {
+    "currentPeriod": "periodo atual",
+    "daysBefore": "{{value}} dias anteriores"
+  },
   "rangeDatePicker": {
     "from": "De",
     "to": "até",
