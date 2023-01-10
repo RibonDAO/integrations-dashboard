@@ -3,6 +3,7 @@ import {
   defaultParagraphSmall,
   defaultTitleSmall,
 } from "styles/typography/default";
+import { Line } from "react-chartjs-2";
 
 export const Container = styled.div`
   width: 100%;
@@ -15,6 +16,8 @@ export const Title = styled.h6`
   color: ${({ theme }) => theme.colors.gray30};
   font-weight: ${({ theme }) => theme.font.medium};
 `;
+
+export const Chart = styled(Line)``;
 
 export const LegendsContainer = styled.div`
   display: flex;

@@ -1,4 +1,3 @@
-import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -8,6 +7,8 @@ import {
   CategoryScale,
   PointElement,
   LineElement,
+  ChartOptions,
+  ChartData,
 } from "chart.js";
 import { hexToRgbaString } from "lib/colorCodeConverter";
 import { useTranslation } from "react-i18next";
@@ -45,45 +46,46 @@ function LinearPeriodsComparsion({
     LineElement,
   );
 
+  const options: ChartOptions<"line"> = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    interaction: {
+      mode: "index",
+      intersect: false,
+    },
+    elements: {
+      point: {
+        radius: 0,
+      },
+    },
+  };
+
+  const data: ChartData<"line"> = {
+    labels,
+    datasets: [
+      {
+        label: t("currentPeriod"),
+        borderColor: hexToRgbaString(color),
+        data: currentPeriodData,
+      },
+      {
+        label: t("daysBefore", {
+          value: daysOffset,
+        }),
+        borderColor: hexToRgbaString(color, 0.2),
+        data: previousPeriodData,
+      },
+    ],
+  };
+
   return (
     <S.Container>
       <S.Title>{title}</S.Title>
-      <Line
-        data={{
-          labels,
-          datasets: [
-            {
-              label: t("currentPeriod"),
-              borderColor: hexToRgbaString(color),
-              data: currentPeriodData,
-            },
-            {
-              label: t("daysBefore", {
-                value: daysOffset,
-              }),
-              borderColor: hexToRgbaString(color, 0.2),
-              data: previousPeriodData,
-            },
-          ],
-        }}
-        options={{
-          responsive: true,
-          plugins: {
-            legend: {
-              display: false,
-            },
-          },
-          interaction: {
-            mode: "index",
-            intersect: false,
-          },
-          elements: {
-            point: {
-              radius: 0,
-            },
-          },
-        }}
-      />
+      <S.Chart data={data} options={options} height={100} />
       <S.LegendsContainer>
         <S.Legend>
           <S.LegendColor color={color} />
