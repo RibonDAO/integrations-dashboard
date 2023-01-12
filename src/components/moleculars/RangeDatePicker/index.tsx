@@ -28,7 +28,8 @@ function RangeDatePicker({
     keyPrefix: "rangeDatePicker",
   });
 
-  const currentLanguage = getLocalStorageItem("LANGUAGE_KEY");
+  const currentLanguage =
+    getLocalStorageItem("LANGUAGE_KEY") || navigator.language;
 
   registerLocale("pt-BR", br);
   registerLocale("en-US", en);
