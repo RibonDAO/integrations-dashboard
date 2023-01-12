@@ -28,7 +28,7 @@ function RangeDatePicker({
     keyPrefix: "rangeDatePicker",
   });
 
-  const lang = getLocalStorageItem("LANGUAGE_KEY");
+  const currentLanguage = getLocalStorageItem("LANGUAGE_KEY");
 
   registerLocale("pt-BR", br);
   registerLocale("en-US", en);
@@ -68,7 +68,7 @@ function RangeDatePicker({
       <S.Text>{t("from")}</S.Text>
       <S.DatePickerWrapper>
         <DatePicker
-          locale={lang === "pt-BR" ? "pt-BR" : "en-US"}
+          locale={currentLanguage === "pt-BR" ? "pt-BR" : "en-US"}
           selected={startDate}
           onChange={(date: Date) =>
             validateAndSetDate(date, handleStartDateChange, date <= endDate)
