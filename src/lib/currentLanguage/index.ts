@@ -1,4 +1,4 @@
-import { getLocalStorageItem } from "lib/localStorage";
+import { getLocalStorageItem } from "@ribon.io/shared/lib";
 import { LANGUAGE_KEY } from "hooks/useLanguage";
 
 export function formattedLanguage(language: string) {

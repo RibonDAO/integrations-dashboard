@@ -1,6 +1,6 @@
 import { renderComponent, waitForPromises } from "config/testUtils";
 import { screen, fireEvent } from "@testing-library/react";
-import { setLocalStorageItem } from "lib/localStorage";
+import { setLocalStorageItem } from "@ribon.io/shared/lib";
 import { LANGUAGE_KEY, useLanguage } from ".";
 
 function TestPage() {
