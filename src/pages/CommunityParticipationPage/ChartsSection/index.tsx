@@ -18,14 +18,14 @@ function ChartsSection({ integrationImpact, daysOffset }: Props): JSX.Element {
       <S.ChartContainer>
         {integrationImpact && (
           <LinearPeriodsComparsion
-            title={t("donationsInThePeriod")}
-            currentPeriodData={integrationImpact?.donationsSplittedIntoIntervals?.map(
+            title={t("donorsInThePeriod")}
+            currentPeriodData={integrationImpact?.donorsSplittedIntoIntervals?.map(
               (item: any) => item?.count || 0,
             )}
-            previousPeriodData={integrationImpact?.previousDonationsSplittedIntoIntervals?.map(
+            previousPeriodData={integrationImpact?.previousDonorsSplittedIntoIntervals?.map(
               (item: any) => item?.count || 0,
             )}
-            labels={integrationImpact?.donationsSplittedIntoIntervals?.map(
+            labels={integrationImpact?.donorsSplittedIntoIntervals?.map(
               (item: any) => item?.initialDate.substring(0, 5) || "",
             )}
             daysOffset={daysOffset}
@@ -35,14 +35,14 @@ function ChartsSection({ integrationImpact, daysOffset }: Props): JSX.Element {
       <S.ChartContainer>
         {integrationImpact && (
           <LinearPeriodsComparsion
-            title={t("donorsInThePeriod")}
-            currentPeriodData={integrationImpact?.donorsSplittedIntoIntervals?.map(
+            title={t("donationsInThePeriod")}
+            currentPeriodData={integrationImpact?.donationsSplittedIntoIntervals?.map(
               (item: any) => item?.count || 0,
             )}
-            previousPeriodData={integrationImpact?.previousDonorsSplittedIntoIntervals?.map(
+            previousPeriodData={integrationImpact?.previousDonationsSplittedIntoIntervals?.map(
               (item: any) => item?.count || 0,
             )}
-            labels={integrationImpact?.donorsSplittedIntoIntervals?.map(
+            labels={integrationImpact?.donationsSplittedIntoIntervals?.map(
               (item: any) => item?.initialDate.substring(0, 5) || "",
             )}
             daysOffset={daysOffset}
