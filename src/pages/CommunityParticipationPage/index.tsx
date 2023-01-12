@@ -7,10 +7,11 @@ import { useIntegrationImpact, useIntegration } from "@ribon.io/shared/hooks";
 import { useNavigate } from "react-router-dom";
 import { daysBetween, formatDate, previousDate } from "lib/dateFormatter";
 import ScrollIndicator from "components/atomics/ScrollIndicator";
+import Loader from "components/atomics/Loader";
 import { updateLocationSearch } from "lib/locationSearch";
-import { formatTrend } from "lib/textFormatter";
-import PlusMinus from "components/atomics/PlusMinus";
-import ProjectImpactSectionPage from "./ProjectImpactSectionPage";
+import ProjectImpactSection from "./ProjectImpactSection";
+import NumbersSection from "./NumbersSection";
+import ChartsSection from "./ChartsSection";
 import * as S from "./styles";
 
 function CommunityParticipationPage(): JSX.Element {
@@ -69,49 +70,25 @@ function CommunityParticipationPage(): JSX.Element {
           customDateFormat={t("datePickerFormat")}
         />
 
-        <S.ContentContainer>
-          <S.ContentDiv>
-            <S.ParticipatingDonorsText>
-              {integrationImpact?.totalDonors || 0}
-            </S.ParticipatingDonorsText>
-            <S.ParticipatingDonorsSubtext>
-              {t("participatingDonors")}
-            </S.ParticipatingDonorsSubtext>
-            <S.ParticipatingDonorsTrendText>
-              <PlusMinus value={integrationImpact?.totalDonorsTrend} />{" "}
-              {formatTrend(integrationImpact?.totalDonorsTrend || 0)}
-            </S.ParticipatingDonorsTrendText>
-            <S.ParticipatingDonorsTrendSubtext>
-              {t("participatingDonorsTrend", {
-                value: daysBetween(startDate, endDate),
-              })}
-            </S.ParticipatingDonorsTrendSubtext>
-          </S.ContentDiv>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <>
+            <NumbersSection
+              integrationImpact={integrationImpact}
+              startDate={startDate}
+              endDate={endDate}
+            />
 
-          <S.ContentDiv>
-            <S.ParticipatingDonorsText>
-              {integrationImpact?.totalDonations || 0}
-            </S.ParticipatingDonorsText>
-            <S.ParticipatingDonorsSubtext>
-              {t("donationsMade")}
-            </S.ParticipatingDonorsSubtext>
-            <S.ParticipatingDonorsTrendText>
-              <PlusMinus value={integrationImpact?.totalDonationsTrend} />{" "}
-              {formatTrend(integrationImpact?.totalDonationsTrend || 0)}
-            </S.ParticipatingDonorsTrendText>
-            <S.ParticipatingDonorsTrendSubtext>
-              {t("participatingDonorsTrend", {
-                value: daysBetween(startDate, endDate),
-              })}
-            </S.ParticipatingDonorsTrendSubtext>
-          </S.ContentDiv>
-        </S.ContentContainer>
-
-        <S.GrayContainer>
-          {!isLoading && (
-            <ProjectImpactSectionPage integrationImpact={integrationImpact} />
-          )}
-        </S.GrayContainer>
+            <ChartsSection
+              integrationImpact={integrationImpact}
+              daysOffset={daysBetween(startDate, endDate)}
+            />
+            <S.GrayContainer>
+              <ProjectImpactSection integrationImpact={integrationImpact} />
+            </S.GrayContainer>
+          </>
+        )}
       </S.InnerContainer>
       <ScrollIndicator />
     </S.Container>

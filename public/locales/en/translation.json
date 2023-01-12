@@ -5,7 +5,11 @@
     "participatingDonorsTrend": "compared to {{value}} days before",
     "donationsMade": "donations made",
     "impactPerProject": "Results per Project",
-    "datePickerFormat": "MM/dd/yyyy"
+    "datePickerFormat": "MM/dd/yyyy",
+    "donationsPerDay": "total donations per day (average)",
+    "donorsPerDay": "total donors per day (average)",
+    "newDonors": "new donors",
+    "returningDonors": "returning donors"
   },
   "impactPerProjectSection": {
     "title": "Results per Project",
@@ -14,6 +18,14 @@
     "donationsButton": "Donations",
     "participatingDonors": "participating donors",
     "donationsMade": "donations made"
+  },
+  "chartsSection": {
+    "donorsInThePeriod": "Donors in the period",
+    "donationsInThePeriod": "Donations in the period"
+  },
+  "linearPeriodsComparsion": {
+    "currentPeriod": "current period",
+    "daysBefore": "{{value}} days before"
   },
   "rangeDatePicker": {
     "from": "From",

@@ -3,7 +3,9 @@ import Shape from "assets/images/green-diamond-shape.svg";
 import { stylizedHeadingLarge } from "styles/typography/stylized";
 import {
   defaultHeadingLarge,
-  defaultParagraphMedium, defaultParagraphSmall, defaultTitleLarge,
+  defaultParagraphMedium,
+  defaultParagraphSmall,
+  defaultTitleLarge,
 } from "styles/typography/default";
 
 export const Container = styled.div`
@@ -15,7 +17,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     background-size: 300px;
@@ -64,6 +65,62 @@ export const ParticipatingDonorsTrendSubtext = styled.p`
   color: ${({ theme }) => theme.colors.gray30};
 `;
 
+export const DonationsPerDayText = styled.h6`
+  ${defaultTitleLarge};
+  margin: 28px 0 0 0;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.orange20};
+  opacity: 0.8;
+`;
+
+export const DonationsPerDaySubtext = styled.p`
+  ${defaultParagraphSmall};
+  margin: 4px 0 0 0;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
+export const DonorsPerDayText = styled.h6`
+  ${defaultTitleLarge};
+  margin: 28px 0 0 0;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.orange20};
+  opacity: 0.8;
+`;
+
+export const DonorsPerDaySubtext = styled.p`
+  ${defaultParagraphSmall};
+  margin: 4px 0 0 0;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
+export const NewDonorsText = styled.h6`
+  ${defaultTitleLarge};
+  margin: 28px 0 0 0;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.orange20};
+  opacity: 0.8;
+`;
+
+export const NewDonorsSubtext = styled.p`
+  ${defaultParagraphSmall};
+  margin: 4px 0 0 0;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
+export const ReturningDonorsText = styled.h6`
+  ${defaultTitleLarge};
+  margin: 28px 0 0 0;
+  line-height: 30px;
+  color: ${({ theme }) => theme.colors.orange20};
+  opacity: 0.8;
+`;
+
+export const ReturningDonorsSubtext = styled.p`
+  ${defaultParagraphSmall};
+  margin: 4px 0 0 0;
+  color: ${({ theme }) => theme.colors.gray30};
+`;
+
 export const Divider = styled.hr`
   border-top: ${({ theme }) => theme.colors.gray30};
   margin-block: 24px;
@@ -104,4 +161,16 @@ export const ImpactContainer = styled.div`
   }
 `;
 
-export const ContentDiv = styled.div``;
+export const ContentDiv = styled.div`
+  @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
+    display: flex;
+  }
+`;
+
+export const InnerContentDiv = styled.div`
+  width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
+    width: 50%;
+  }
+`;
