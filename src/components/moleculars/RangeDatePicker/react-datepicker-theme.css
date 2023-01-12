@@ -386,8 +386,12 @@
 }
 
 .react-datepicker__day-names {
+  margin-top: 8px;
   margin-bottom: -8px;
-  display: none;
+}
+
+.react-datepicker__day-name {
+  color:rgba(0, 0, 0, 0.5) !important;
 }
 
 .react-datepicker__day-name,
