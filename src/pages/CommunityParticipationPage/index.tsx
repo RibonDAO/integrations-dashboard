@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useIntegrationImpact, useIntegration } from "@ribon.io/shared/hooks";
 import { useNavigate } from "react-router-dom";
 import { daysBetween, formatDate, previousDate } from "lib/dateFormatter";
+import ChangeLanguageItem from "components/moleculars/ChangeLanguageItem";
 import ScrollIndicator from "components/atomics/ScrollIndicator";
 import Loader from "components/atomics/Loader";
 import { updateLocationSearch } from "lib/locationSearch";
@@ -58,7 +59,10 @@ function CommunityParticipationPage(): JSX.Element {
   return (
     <S.Container>
       <S.InnerContainer>
-        <IconAndText icon={RibonIconSquared} text={integration?.name} />
+        <S.Header>
+          <IconAndText icon={RibonIconSquared} text={integration?.name} />
+          <ChangeLanguageItem />
+        </S.Header>
         <S.Title>{t("title")}</S.Title>
         <S.Divider />
 
