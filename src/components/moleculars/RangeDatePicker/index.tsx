@@ -80,7 +80,7 @@ function RangeDatePicker({
       <S.Text>{t("to")}</S.Text>
       <S.DatePickerWrapper>
         <DatePicker
-          locale={lang === "pt-BR" ? "pt-BR" : "en-US"}
+          locale={currentLanguage === "pt-BR" ? "pt-BR" : "en-US"}
           selected={endDate}
           onChange={(date: Date) =>
             validateAndSetDate(date, handleEndDateChange, date >= startDate)
