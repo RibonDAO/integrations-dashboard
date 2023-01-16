@@ -19,6 +19,5 @@ export function formattedLanguage(language: string) {
 export function normalizedLanguage(): string {
   const language =
     getLocalStorageItem(LANGUAGE_KEY) || formattedLanguage(navigator.language);
-  console.log("language", language);
   return formattedLanguage(language);
 }
