@@ -19,8 +19,6 @@ function CommunityParticipationPage(): JSX.Element {
     keyPrefix: "communityParticipationPage",
   });
   const navigate = useNavigate();
-  const [currentIntegrationImpact, setCurrentIntegrationImpact] =
-    useState(null);
   const [isFetching, setIsFetching] = useState(true);
 
   const { searchParams } = new URL(window.location.href);
@@ -54,7 +52,6 @@ function CommunityParticipationPage(): JSX.Element {
 
   useEffect(() => {
     if (integrationImpact) {
-      setCurrentIntegrationImpact(integrationImpact);
       setIsFetching(false);
     }
   }, [integrationImpact]);
@@ -86,19 +83,17 @@ function CommunityParticipationPage(): JSX.Element {
         ) : (
           <>
             <NumbersSection
-              integrationImpact={currentIntegrationImpact}
+              integrationImpact={integrationImpact}
               startDate={startDate}
               endDate={endDate}
             />
 
             <ChartsSection
-              integrationImpact={currentIntegrationImpact}
+              integrationImpact={integrationImpact}
               daysOffset={daysBetween(startDate, endDate)}
             />
             <S.GrayContainer>
-              <ProjectImpactSection
-                integrationImpact={currentIntegrationImpact}
-              />
+              <ProjectImpactSection integrationImpact={integrationImpact} />
             </S.GrayContainer>
           </>
         )}
