@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import Shape from "assets/images/green-diamond-shape.svg";
 import { stylizedHeadingLarge } from "styles/typography/stylized";
-import {
-  defaultHeadingLarge,
-  defaultParagraphMedium,
-  defaultParagraphSmall,
-  defaultTitleLarge,
-} from "styles/typography/default";
 
 export const Container = styled.div`
   width: 100%;
@@ -39,86 +33,11 @@ export const Title = styled.h6`
   color: ${({ theme }) => theme.colors.darkGray};
 `;
 
-export const ParticipatingDonorsText = styled.h6`
-  ${defaultHeadingLarge};
-  margin: 28px 0 0 0;
-  line-height: 30px;
-  color: ${({ theme }) => theme.colors.orange20};
-`;
-
-export const ParticipatingDonorsTrendText = styled.h6`
-  ${defaultTitleLarge};
-  margin: 28px 0 0 0;
-  line-height: 30px;
-  color: ${({ theme }) => theme.colors.gray30};
-`;
-
-export const ParticipatingDonorsSubtext = styled.p`
-  ${defaultParagraphMedium};
-  margin: 4px 0 0 0;
-  color: ${({ theme }) => theme.colors.gray30};
-`;
-
-export const ParticipatingDonorsTrendSubtext = styled.p`
-  ${defaultParagraphSmall};
-  margin: 4px 0 0 0;
-  color: ${({ theme }) => theme.colors.gray30};
-`;
-
-export const DonationsPerDayText = styled.h6`
-  ${defaultTitleLarge};
-  margin: 28px 0 0 0;
-  line-height: 30px;
-  color: ${({ theme }) => theme.colors.orange20};
-  opacity: 0.8;
-`;
-
-export const DonationsPerDaySubtext = styled.p`
-  ${defaultParagraphSmall};
-  margin: 4px 0 0 0;
-  color: ${({ theme }) => theme.colors.gray30};
-`;
-
-export const DonorsPerDayText = styled.h6`
-  ${defaultTitleLarge};
-  margin: 28px 0 0 0;
-  line-height: 30px;
-  color: ${({ theme }) => theme.colors.orange20};
-  opacity: 0.8;
-`;
-
-export const DonorsPerDaySubtext = styled.p`
-  ${defaultParagraphSmall};
-  margin: 4px 0 0 0;
-  color: ${({ theme }) => theme.colors.gray30};
-`;
-
-export const NewDonorsText = styled.h6`
-  ${defaultTitleLarge};
-  margin: 28px 0 0 0;
-  line-height: 30px;
-  color: ${({ theme }) => theme.colors.orange20};
-  opacity: 0.8;
-`;
-
-export const NewDonorsSubtext = styled.p`
-  ${defaultParagraphSmall};
-  margin: 4px 0 0 0;
-  color: ${({ theme }) => theme.colors.gray30};
-`;
-
-export const ReturningDonorsText = styled.h6`
-  ${defaultTitleLarge};
-  margin: 28px 0 0 0;
-  line-height: 30px;
-  color: ${({ theme }) => theme.colors.orange20};
-  opacity: 0.8;
-`;
-
-export const ReturningDonorsSubtext = styled.p`
-  ${defaultParagraphSmall};
-  margin: 4px 0 0 0;
-  color: ${({ theme }) => theme.colors.gray30};
+export const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Divider = styled.hr`

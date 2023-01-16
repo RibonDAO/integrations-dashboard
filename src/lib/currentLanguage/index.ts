@@ -1,3 +1,6 @@
+import { getLocalStorageItem } from "@ribon.io/shared/lib";
+import { LANGUAGE_KEY } from "hooks/useLanguage";
+
 export function formattedLanguage(language: string) {
   switch (language) {
     case "en":
@@ -11,4 +14,10 @@ export function formattedLanguage(language: string) {
     default:
       return "pt-BR";
   }
+}
+
+export function normalizedLanguage(): string {
+  const language =
+    getLocalStorageItem(LANGUAGE_KEY) || formattedLanguage(navigator.language);
+  return formattedLanguage(language);
 }
