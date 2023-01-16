@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import "./react-datepicker-theme.css";
 import ScheduleErrorImage from "assets/images/schedule-error.svg";
 import { useModal } from "hooks/modalHooks/useModal";
-import { getLocalStorageItem } from "@ribon.io/shared/lib";
+import { normalizedLanguage } from "lib/currentLanguage";
 import br from "date-fns/locale/pt-BR";
 import en from "date-fns/locale/en-US";
 import * as S from "./styles";
@@ -28,8 +28,7 @@ function RangeDatePicker({
     keyPrefix: "rangeDatePicker",
   });
 
-  const currentLanguage =
-    getLocalStorageItem("LANGUAGE_KEY") || navigator.language;
+  const currentLanguage = normalizedLanguage();
 
   registerLocale("pt-BR", br);
   registerLocale("en-US", en);
