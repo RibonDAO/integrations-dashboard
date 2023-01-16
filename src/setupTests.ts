@@ -3,4 +3,5 @@ import "jest-canvas-mock";
 
 jest.mock("react-chartjs-2", () => ({
   Pie: () => null,
+  Line: () => null,
 }));
