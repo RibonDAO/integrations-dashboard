@@ -19,6 +19,9 @@ function CommunityParticipationPage(): JSX.Element {
     keyPrefix: "communityParticipationPage",
   });
   const navigate = useNavigate();
+  const [currentIntegrationImpact, setCurrentIntegrationImpact] =
+    useState(null);
+  const [isFetching, setIsFetching] = useState(true);
 
   const { searchParams } = new URL(window.location.href);
   const integrationId = searchParams.get("integration_id");
@@ -43,15 +46,23 @@ function CommunityParticipationPage(): JSX.Element {
   };
   const [startDate, setStartDate] = useState<Date>(initialStartDate());
   const { integration } = useIntegration(integrationId);
-  const { integrationImpact, refetch, isLoading } = useIntegrationImpact(
+  const { integrationImpact, refetch } = useIntegrationImpact(
     integrationId,
     formatDate(startDate),
     formatDate(endDate),
   );
 
   useEffect(() => {
+    if (integrationImpact) {
+      setCurrentIntegrationImpact(integrationImpact);
+      setIsFetching(false);
+    }
+  }, [integrationImpact]);
+
+  useEffect(() => {
     updateLocationSearch("start_date", formatDate(startDate));
     updateLocationSearch("end_date", formatDate(endDate));
+    setIsFetching(true);
     refetch();
   }, [startDate, endDate]);
 
@@ -70,22 +81,24 @@ function CommunityParticipationPage(): JSX.Element {
           customDateFormat={t("datePickerFormat")}
         />
 
-        {isLoading ? (
+        {isFetching ? (
           <Loader />
         ) : (
           <>
             <NumbersSection
-              integrationImpact={integrationImpact}
+              integrationImpact={currentIntegrationImpact}
               startDate={startDate}
               endDate={endDate}
             />
 
             <ChartsSection
-              integrationImpact={integrationImpact}
+              integrationImpact={currentIntegrationImpact}
               daysOffset={daysBetween(startDate, endDate)}
             />
             <S.GrayContainer>
-              <ProjectImpactSection integrationImpact={integrationImpact} />
+              <ProjectImpactSection
+                integrationImpact={currentIntegrationImpact}
+              />
             </S.GrayContainer>
           </>
         )}
