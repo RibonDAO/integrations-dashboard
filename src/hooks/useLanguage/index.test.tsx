@@ -50,9 +50,9 @@ describe("useLanguage", () => {
           reload: jest.fn(),
         },
       });
-      setLocalStorageItem(LANGUAGE_KEY, "en");
+      setLocalStorageItem(LANGUAGE_KEY, "en-US");
       renderComponent(<TestPage />);
-      expect(screen.getByText("en")).toBeInTheDocument();
+      expect(screen.getByText("en-US")).toBeInTheDocument();
 
       fireEvent.click(screen.getByText("change language"));
       await waitForPromises();
