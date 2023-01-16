@@ -66,7 +66,7 @@ function CommunityParticipationPage(): JSX.Element {
   return (
     <S.Container>
       <S.InnerContainer>
-        <IconAndText icon={RibonIconSquared} text={integration?.name} />
+        <IconAndText icon={RibonIconSquared} text={integration?.name || ""} />
         <S.Title>{t("title")}</S.Title>
         <S.Divider />
 
