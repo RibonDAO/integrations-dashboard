@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { stylizedTitleLarge } from "styles/typography/stylized";
+import { stylizedDisplayXs } from "styles/typography/stylized";
 
 export const Container = styled.div`
   width: 100%;
 `;
 
 export const Title = styled.h6`
-  ${stylizedTitleLarge};
+  ${stylizedDisplayXs};
   margin: 8px 0 24px 0;
   color: ${({ theme }) => theme.colors.green40};
 `;

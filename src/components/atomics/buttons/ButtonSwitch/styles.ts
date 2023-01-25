@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { defaultParagraphMedium } from "styles/typography/default";
+import { defaultBodySmRegular } from "styles/typography/default";
 
 export const Container = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const ContainerSwitch = styled.div`
 `;
 
 export const Text = styled.p`
-  ${defaultParagraphMedium}
+  ${defaultBodySmRegular}
 
   color: ${({ color }) => color};
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import WaveCut from "assets/images/wave-cut.svg";
-import { defaultSubtitleMedium } from "styles/typography/default";
+import { defaultBodySmSemibold } from "styles/typography/default";
 
 export const Container = styled.div`
   position: relative;
@@ -41,7 +41,7 @@ export const MainText = styled.h1`
 `;
 
 export const SubText = styled.h2`
-  ${defaultSubtitleMedium}
+  ${defaultBodySmSemibold}
 
   color: ${({ theme }) => theme.colors.gray30};
 `;

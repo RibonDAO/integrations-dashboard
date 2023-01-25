@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
-  defaultParagraphSmall,
-  defaultTitleSmall,
+  defaultBodyXsRegular,
+  defaultBodyMdBold,
 } from "styles/typography/default";
 import { Line } from "react-chartjs-2";
 
@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h6`
-  ${defaultTitleSmall};
+  ${defaultBodyMdBold};
   margin: 0 0 10px 0;
   color: ${({ theme }) => theme.colors.gray30};
   font-weight: ${({ theme }) => theme.font.medium};
@@ -40,7 +40,7 @@ export const LegendColor = styled.div<{ color: string }>`
 `;
 
 export const LegendText = styled.p`
-  ${defaultParagraphSmall};
+  ${defaultBodyXsRegular};
   margin: 0;
   color: ${({ theme }) => theme.colors.gray30};
 `;

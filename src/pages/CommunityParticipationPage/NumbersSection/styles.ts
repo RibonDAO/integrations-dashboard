@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import {
-  defaultHeadingLarge,
-  defaultParagraphMedium,
-  defaultParagraphSmall,
-  defaultTitleLarge,
+  defaultHeadingLg,
+  defaultBodySmRegular,
+  defaultBodyXsRegular,
+  defaultHeadingXs,
 } from "styles/typography/default";
 
 export const Container = styled.div`
@@ -36,34 +36,34 @@ export const Block = styled.div`
 `;
 
 export const BigNumber = styled.h6`
-  ${defaultHeadingLarge};
+  ${defaultHeadingLg};
   margin: 28px 0 0 0;
   line-height: 30px;
   color: ${({ theme }) => theme.colors.orange20};
 `;
 
 export const Percentage = styled.h6`
-  ${defaultTitleLarge};
+  ${defaultHeadingXs};
   margin: 28px 0 0 0;
   line-height: 30px;
   color: ${({ theme }) => theme.colors.gray30};
 `;
 
 export const SmallNumber = styled.h6`
-  ${defaultTitleLarge};
+  ${defaultHeadingXs};
   margin: 28px 0 0 0;
   line-height: 30px;
   color: ${({ theme }) => theme.colors.orange20};
 `;
 
 export const BigSubtitle = styled.p`
-  ${defaultParagraphMedium};
+  ${defaultBodySmRegular};
   margin: 4px 0 0 0;
   color: ${({ theme }) => theme.colors.gray30};
 `;
 
 export const SmallSubtitle = styled.p`
-  ${defaultParagraphSmall};
+  ${defaultBodyXsRegular};
   margin: 4px 0 0 0;
   color: ${({ theme }) => theme.colors.gray30};
 `;
