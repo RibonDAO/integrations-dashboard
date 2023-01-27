@@ -1,18 +1,18 @@
 import styled, { css } from "styled-components";
-import { defaultTitleLarge } from "styles/typography/default";
+import { defaultHeadingXs } from "styles/typography/default";
 
 export const Container = styled.div`
   ${() => css``}
 `;
 
 export const PlusIcon = styled.p`
-  ${defaultTitleLarge};
+  ${defaultHeadingXs};
   color: ${({ theme }) => theme.colors.green30};
   display: inline;
 `;
 
 export const MinusIcon = styled.p`
-  ${defaultTitleLarge};
+  ${defaultHeadingXs};
   color: ${({ theme }) => theme.colors.red30};
   display: inline;
 `;
