@@ -6,13 +6,13 @@ export const ModalWithImage = styled(Modal)`
 `;
 
 export const Container = styled.div`
-  padding: 16px;
+  padding: ${({ theme }) => theme.spacing(16)};
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 100px;
-  padding-top: 16px;
+  padding-top: ${({ theme }) => theme.spacing(16)};
 `;
 
 type TitleProps = {
@@ -25,12 +25,12 @@ export const Title = styled.h3<TitleProps>`
 `;
 
 export const Body = styled.p`
-  margin: 8px 0 20px;
+  margin: ${({ theme }) => theme.spacing(8, 0, 20)};
   text-align: center;
   color: ${({ theme }) => theme.colors.gray30};
 `;
 
 export const RowsModalRow = styled.div`
-  margin-bottom: 28px;
+  margin-bottom: ${({ theme }) => theme.spacing(32)};
   display: flex;
 `;

@@ -36,34 +36,39 @@ export const Block = styled.div`
 `;
 
 export const BigNumber = styled.h6`
-  ${defaultHeadingLg};
-  margin: 28px 0 0 0;
+  ${defaultHeadingLg}
+
+  margin: ${({ theme }) => theme.spacing(32, 0, 0, 0)};
   line-height: 30px;
   color: ${({ theme }) => theme.colors.orange20};
 `;
 
 export const Percentage = styled.h6`
-  ${defaultHeadingXs};
-  margin: 28px 0 0 0;
+  ${defaultHeadingXs}
+
+  margin: ${({ theme }) => theme.spacing(32, 0, 0, 0)};
   line-height: 30px;
   color: ${({ theme }) => theme.colors.gray30};
 `;
 
 export const SmallNumber = styled.h6`
-  ${defaultHeadingXs};
-  margin: 28px 0 0 0;
+  ${defaultHeadingXs}
+
+  margin: ${({ theme }) => theme.spacing(32, 0, 0, 0)};
   line-height: 30px;
   color: ${({ theme }) => theme.colors.orange20};
 `;
 
 export const BigSubtitle = styled.p`
-  ${defaultBodySmRegular};
-  margin: 4px 0 0 0;
+  ${defaultBodySmRegular}
+
+  margin: ${({ theme }) => theme.spacing(4, 0, 0, 0)};
   color: ${({ theme }) => theme.colors.gray30};
 `;
 
 export const SmallSubtitle = styled.p`
-  ${defaultBodyXsRegular};
-  margin: 4px 0 0 0;
+  ${defaultBodyXsRegular}
+
+  margin: ${({ theme }) => theme.spacing(4, 0, 0, 0)};
   color: ${({ theme }) => theme.colors.gray30};
 `;

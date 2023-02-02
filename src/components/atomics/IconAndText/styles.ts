@@ -8,8 +8,8 @@ export const Container = styled.div`
 
 export const Icon = styled.img`
   width: 40px;
-  margin-right: 8px;
-  padding-right: 8px;
+  margin-right: ${({ theme }) => theme.spacing(8)};
+  padding-right: ${({ theme }) => theme.spacing(8)};
   border-right: 2px solid ${({ theme }) => theme.colors.gray20};
 `;
 

@@ -7,32 +7,32 @@ export const Container = styled.div`
 `;
 
 export const DatePickerWrapper = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.green30};
   margin-inline: 16px;
   padding-inline: 4px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.green30};
 
   * .react-datepicker__input-container {
-    color: ${({ theme }) => theme.colors.gray30};
     width: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    color: ${({ theme }) => theme.colors.gray30};
 
     input {
       width: 100%;
-      background-color: transparent;
       border: none;
+      background-color: transparent;
     }
 
     ::after {
-      content: url(${ArrowDown});
-      pointer-events: none !important;
       width: 16px;
       height: 16px;
+      margin-left: ${({ theme }) => theme.spacing(8)};
+      content: url(${ArrowDown});
       display: flex;
       align-items: center;
-      margin-left: 8px;
+      pointer-events: none !important;
     }
   }
 `;
