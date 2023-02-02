@@ -58,6 +58,8 @@
     "testCoverage": "craco test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.ts src/**/*.tsx && prettier --check src/**/*.ts src/**/*.tsx",
+    "lint:css": "stylelint src/**/styles.ts",
+    "lint:css:fix": "stylelint --fix src/**/styles.ts",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "storybook": "start-storybook -p 6006 -s public"
   },
@@ -93,6 +95,7 @@
     "@storybook/node-logger": "^6.4.13",
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.5.9",
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "@testing-library/react-hooks": "^8.0.1",
     "@types/react-router": "^5.1.5",
     "@types/react-router-dom": "^5.3.2",
@@ -112,7 +115,36 @@
     "jest-styled-components": "^7.0.8",
     "plop": "^3.1.1",
     "prettier": "^2.7.1",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "lint-staged": "^13.0.3",
+    "postcss": "~8.4.6",
+    "postcss-jsx": "^0.36.4",
+    "postcss-syntax": "^0.36.2",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-custom-processor-loader": "^0.6.0",
+    "stylelint-order": "^5.0.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint",
+      "prettier --check"
+    ],
+    "*.js": [
+      "eslint",
+      "prettier --check"
+    ],
+    "*.tsx": [
+      "eslint",
+      "prettier --check"
+    ],
+    "styles.ts": [
+      "stylelint --fix",
+      "stylelint"
+    ]
   },
   "jest": {
     "transformIgnorePatterns": [

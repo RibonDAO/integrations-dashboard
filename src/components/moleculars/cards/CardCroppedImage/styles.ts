@@ -3,21 +3,21 @@ import WaveCut from "assets/images/wave-cut.svg";
 import { defaultBodySmSemibold } from "styles/typography/default";
 
 export const Container = styled.div`
-  position: relative;
+  min-height: 326px;
   border-radius: 16px;
+  position: relative;
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => theme.colors.neutral10};
   box-shadow: 0 4px 12px ${({ theme }) => theme.colors.defaultShadow};
-  min-height: 326px;
 `;
 
 export const InnerContainer = styled.div`
   padding: 20px 16px;
-  align-items: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 `;
 
@@ -47,15 +47,12 @@ export const SubText = styled.h2`
 `;
 
 export const InternalImage = styled.img`
+  mix-blend-mode: screen;
   width: 120px;
   height: 120px;
+  margin-top: 8px;
   position: absolute;
   left: calc(50% - 60px);
-  margin-top: 8px;
   z-index: 1;
   filter: grayscale(100%) brightness(68%) saturate(0%) contrast(1000%);
-  -webkit-filter: grayscale(100%) brightness(68%) saturate(0%) contrast(1000%);
-  -moz-filter: grayscale(100%) brightness(68%) saturate(0%) contrast(1000%);
-
-  mix-blend-mode: screen;
 `;

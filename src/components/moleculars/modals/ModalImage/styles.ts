@@ -25,7 +25,7 @@ export const Title = styled.h3<TitleProps>`
 `;
 
 export const Body = styled.p`
-  margin: 8px 0 20px;
+  margin: ${({ theme }) => theme.spacing(8, 0, 20)};
   text-align: center;
   color: ${({ theme }) => theme.colors.gray30};
 `;

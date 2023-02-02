@@ -5,12 +5,12 @@ import { stylizedDisplayLg } from "styles/typography/stylized";
 export const Container = styled.div`
   width: 100%;
   min-height: 70vh;
-  background: url(${Shape}) no-repeat;
-  background-position: top right;
-  background-size: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(${Shape}) no-repeat;
+  background-position: top right;
+  background-size: 200px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     background-size: 300px;
@@ -28,8 +28,9 @@ export const InnerContainer = styled.div`
 `;
 
 export const Title = styled.h6`
-  ${stylizedDisplayLg};
-  margin: 8px 0 24px 0;
+  ${stylizedDisplayLg}
+
+  margin: 8px 0 24px;
   color: ${({ theme }) => theme.colors.darkGray};
 `;
 
@@ -41,8 +42,8 @@ export const Header = styled.header`
 `;
 
 export const Divider = styled.hr`
-  border-top: ${({ theme }) => theme.colors.gray30};
   margin-block: 24px;
+  border-top: ${({ theme }) => theme.colors.gray30};
 `;
 
 export const ContentContainer = styled.div`
@@ -54,22 +55,22 @@ export const ContentContainer = styled.div`
 `;
 
 export const GrayContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.gray10};
   min-height: 900px;
-  margin: 28px -24px 0 -24px;
-  padding: 32px 24px 0 24px;
+  margin: 28px -24px 0;
+  padding: 32px 24px 0;
+  background-color: ${({ theme }) => theme.colors.gray10};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
-    margin: 28px -33.33% 0 -33.33%;
-    padding: 32px 33.33% 0 33.33%;
+    margin: 28px -33.33% 0;
+    padding: 32px 33.33% 0;
   }
 `;
 
 export const ImpactContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 16px;
   row-gap: 16px;
+  column-gap: 16px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     grid-template-columns: 1fr 1fr;

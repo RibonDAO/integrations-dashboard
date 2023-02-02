@@ -6,13 +6,15 @@ export const Container = styled.div`
 `;
 
 export const PlusIcon = styled.p`
-  ${defaultHeadingXs};
-  color: ${({ theme }) => theme.colors.green30};
+  ${defaultHeadingXs}
+
   display: inline;
+  color: ${({ theme }) => theme.colors.green30};
 `;
 
 export const MinusIcon = styled.p`
-  ${defaultHeadingXs};
-  color: ${({ theme }) => theme.colors.red30};
+  ${defaultHeadingXs}
+
   display: inline;
+  color: ${({ theme }) => theme.colors.red30};
 `;

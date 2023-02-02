@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  margin-top: 100px;
   display: flex;
+  flex: auto;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  flex: auto;
-  margin-top: 100px;
 `;
 
 export const Title = styled.h2`

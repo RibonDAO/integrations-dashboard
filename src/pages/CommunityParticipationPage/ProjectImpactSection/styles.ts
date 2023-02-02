@@ -6,16 +6,17 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h6`
-  ${stylizedDisplayXs};
-  margin: 8px 0 24px 0;
+  ${stylizedDisplayXs}
+
+  margin: 8px 0 24px;
   color: ${({ theme }) => theme.colors.green40};
 `;
 
 export const ImpactContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 16px;
   row-gap: 16px;
+  column-gap: 16px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     grid-template-columns: 1fr 1fr;
