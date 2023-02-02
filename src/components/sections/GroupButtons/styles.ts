@@ -6,16 +6,16 @@ export const Button = styled.button<{
 }>`
   width: auto;
   height: 32px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  padding: 4px 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  margin-right: ${({ theme }) => theme.spacing(8)};
+  margin-bottom: ${({ theme }) => theme.spacing(8)};
+  padding: ${({ theme }) => theme.spacing(4, 8)};
   border: 1px solid
     ${(props) =>
       props.outline ? props.theme.colors.gray30 : props.theme.colors.green40};
   border-radius: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.gray10};
   color: ${(props) =>
     props.outline ? props.theme.colors.gray30 : props.theme.colors.green40};
@@ -29,6 +29,6 @@ export const ButtonIcon = styled.img``;
 
 export const Container = styled.div`
   width: 100%;
+  margin-bottom: ${({ theme }) => theme.spacing(20)};
   display: flex;
-  margin-bottom: 20px;
 `;
