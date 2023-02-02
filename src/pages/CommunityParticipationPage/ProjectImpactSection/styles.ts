@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const Title = styled.h6`
   ${stylizedDisplayXs}
 
-  margin: 8px 0 24px;
+  margin: ${({ theme }) => theme.spacing(8, 0, 24)};
   color: ${({ theme }) => theme.colors.green40};
 `;
 

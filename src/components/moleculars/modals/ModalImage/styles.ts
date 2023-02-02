@@ -6,13 +6,13 @@ export const ModalWithImage = styled(Modal)`
 `;
 
 export const Container = styled.div`
-  padding: 16px;
+  padding: ${({ theme }) => theme.spacing(16)};
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 100px;
-  padding-top: 16px;
+  padding-top: ${({ theme }) => theme.spacing(16)};
 `;
 
 type TitleProps = {
@@ -31,6 +31,6 @@ export const Body = styled.p`
 `;
 
 export const RowsModalRow = styled.div`
-  margin-bottom: 28px;
+  margin-bottom: ${({ theme }) => theme.spacing(32)};
   display: flex;
 `;

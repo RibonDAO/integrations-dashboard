@@ -12,7 +12,7 @@ export const BlankModal = styled(ReactModal)`
 export const Modal = styled(BlankModal)`
   button,
   a {
-    margin-bottom: 8px;
+    margin-bottom: ${({ theme }) => theme.spacing(8)};
 
     &:last-child {
       margin: ${({ theme }) => theme.spacing(0)};

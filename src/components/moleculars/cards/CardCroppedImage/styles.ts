@@ -13,7 +13,7 @@ export const Container = styled.div`
 `;
 
 export const InnerContainer = styled.div`
-  padding: 20px 16px;
+  padding: ${({ theme }) => theme.spacing(20, 16)};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,7 +50,7 @@ export const InternalImage = styled.img`
   mix-blend-mode: screen;
   width: 120px;
   height: 120px;
-  margin-top: 8px;
+  margin-top: ${({ theme }) => theme.spacing(8)};
   position: absolute;
   left: calc(50% - 60px);
   z-index: 1;

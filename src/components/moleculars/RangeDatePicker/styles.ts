@@ -28,7 +28,7 @@ export const DatePickerWrapper = styled.div`
     ::after {
       width: 16px;
       height: 16px;
-      margin-left: 8px;
+      margin-left: ${({ theme }) => theme.spacing(8)};
       content: url(${ArrowDown});
       display: flex;
       align-items: center;

@@ -19,8 +19,8 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
   width: 100%;
-  margin-top: 4rem;
-  padding: 0 24px;
+  margin-top: ${({ theme }) => theme.spacing(64)};
+  padding: ${({ theme }) => theme.spacing(0, 24)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     padding: 0 20%;
@@ -30,7 +30,7 @@ export const InnerContainer = styled.div`
 export const Title = styled.h6`
   ${stylizedDisplayLg}
 
-  margin: 8px 0 24px;
+  margin: ${({ theme }) => theme.spacing(8, 0, 24)};
   color: ${({ theme }) => theme.colors.darkGray};
 `;
 
@@ -57,7 +57,7 @@ export const ContentContainer = styled.div`
 export const GrayContainer = styled.div`
   min-height: 900px;
   margin: 28px -24px 0;
-  padding: 32px 24px 0;
+  padding: ${({ theme }) => theme.spacing(32, 24, 0)};
   background-color: ${({ theme }) => theme.colors.gray10};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {

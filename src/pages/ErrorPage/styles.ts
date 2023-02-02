@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin-top: 100px;
+  margin-top: ${({ theme }) => theme.spacing(112)};
   display: flex;
   flex: auto;
   flex-direction: column;
@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  margin-top: 40px;
+  margin-top: ${({ theme }) => theme.spacing(40)};
   color: ${({ theme }) => theme.colors.darkGray};
 `;
 
