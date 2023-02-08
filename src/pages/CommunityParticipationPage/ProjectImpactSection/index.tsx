@@ -8,6 +8,7 @@ import DonationsOff from "assets/icons/donation-gray.svg";
 import DonorsOn from "assets/icons/group-dark-green.svg";
 import DonorsOff from "assets/icons/group-gray.svg";
 import { useTranslation } from "react-i18next";
+import useFormattedImpact from "pages/CommunityParticipationPage/ProjectImpactSection/formattedImpact";
 import * as S from "./styles";
 
 type Props = {
@@ -18,7 +19,7 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
   const { t } = useTranslation("translation", {
     keyPrefix: "impactPerProjectSection",
   });
-
+  const { formattedImpactText, formattedImpactUnit } = useFormattedImpact();
   const [selectedButtonIndex, setSelectedButtonIndex] = useState(0);
 
   const filterOptions = [
@@ -46,8 +47,8 @@ function ProjectImpactSectionPage({ integrationImpact }: Props): JSX.Element {
     {
       data: integrationImpact?.impactPerNonProfit,
       parse: (item: any) => ({
-        description: item?.nonProfit?.impactDescription,
-        value: item?.impact || 0,
+        description: formattedImpactText(item?.nonProfit, item?.impact),
+        value: formattedImpactUnit(item?.nonProfit, item?.impact),
       }),
     },
     {

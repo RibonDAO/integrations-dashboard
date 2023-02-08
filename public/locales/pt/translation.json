@@ -43,5 +43,16 @@
   },
   "scrollIndicator": {
     "learnMore": "Veja mais"
+  },
+  "impactNormalizer": {
+    "year": "ano",
+    "years": "anos",
+    "month": "mês",
+    "months": "meses",
+    "day": "dia",
+    "days": "dias",
+    "for": "para",
+    "and": "e",
+    "of": "de"
   }
 }
