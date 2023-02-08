@@ -2,7 +2,7 @@ import * as S from "./styles";
 
 export type Props = {
   mainText?: string;
-  secondaryText?: any;
+  secondaryText?: string;
   image?: string;
   internalImage?: string;
 };
