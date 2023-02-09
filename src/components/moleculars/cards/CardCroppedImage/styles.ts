@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import WaveCut from "assets/images/wave-cut.svg";
-import { defaultBodySmSemibold } from "styles/typography/default";
+import {
+  defaultBodySmRegular,
+  defaultHeadingXs,
+} from "styles/typography/default";
 
 export const Container = styled.div`
   min-height: 326px;
@@ -37,11 +40,12 @@ export const SupportImage = styled.img`
 `;
 
 export const MainText = styled.h1`
-  color: ${({ theme }) => theme.colors.green20};
+  ${defaultHeadingXs}
+  color: #0ea472;
 `;
 
 export const SubText = styled.h2`
-  ${defaultBodySmSemibold}
+  ${defaultBodySmRegular}
 
   color: ${({ theme }) => theme.colors.gray30};
 `;
