@@ -19,11 +19,12 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
   width: 100%;
-  margin-top: ${({ theme }) => theme.spacing(32)};
+  margin-top: ${({ theme }) => theme.spacing(16)};
   padding: ${({ theme }) => theme.spacing(0, 24)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     padding: 0 20%;
+    margin-top: ${({ theme }) => theme.spacing(40)};
   }
 `;
 
@@ -39,10 +40,11 @@ export const Header = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: ${({ theme }) => theme.spacing(24)};
 `;
 
 export const Divider = styled.hr`
-  margin-block: 24px;
+  margin-bottom: ${({ theme }) => theme.spacing(32)};
   border-top: ${({ theme }) => theme.colors.gray30};
 `;
 
