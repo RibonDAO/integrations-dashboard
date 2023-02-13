@@ -1,6 +1,7 @@
 import { impactNormalizer } from "@ribon.io/shared/lib";
 import { Fragment } from "react";
 import { useTranslation } from "react-i18next";
+import * as S from "../styles";
 
 export function useFormattedImpact() {
   const { t: normalizerTranslation } = useTranslation("translation", {
@@ -17,9 +18,13 @@ export function useFormattedImpact() {
     </>
   );
 
-  const unitImpact = (normalizedImpactUnit: any) => (
+  const unitImpact = (normalizedImpactUnit: any, unit: string) => (
     <>
-      {normalizedImpactUnit[0]}
+      {unit !== "days_months_and_years" && (
+        <S.MainTextNumber>{normalizedImpactUnit[0]}</S.MainTextNumber>
+      )}
+      {unit === "days_months_and_years" && normalizedImpactUnit[0]}
+
       {normalizedImpactUnit.length > 1 && (
         <p>
           <b>{normalizedImpactUnit[normalizedImpactUnit.length - 1]}</b>
@@ -46,7 +51,12 @@ export function useFormattedImpact() {
     } else {
       first = `${words[0]} ${words[1]}`;
     }
-    return unitImpact([first, unit.replace(first, "")]);
+
+    return unitImpact(
+      [first, unit.replace(first, "")],
+      nonProfit?.nonProfitImpacts[nonProfit.nonProfitImpacts.length - 1]
+        ?.measurementUnit,
+    );
   }
 
   function formattedImpactText(nonProfit?: any, impact?: number) {

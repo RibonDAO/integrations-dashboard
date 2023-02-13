@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { defaultHeadingSm } from "styles/typography/default";
 import { stylizedDisplayXs } from "styles/typography/stylized";
 
 export const Container = styled.div`
@@ -29,4 +30,8 @@ export const ImpactContainer = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktopLarge}) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+`;
+export const MainTextNumber = styled.h1`
+  ${defaultHeadingSm}
+  color: #0ea472;
 `;
