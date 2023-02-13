@@ -19,18 +19,19 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
   width: 100%;
-  margin-top: ${({ theme }) => theme.spacing(64)};
+  margin-top: ${({ theme }) => theme.spacing(16)};
   padding: ${({ theme }) => theme.spacing(0, 24)};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     padding: 0 20%;
+    margin-top: ${({ theme }) => theme.spacing(40)};
   }
 `;
 
 export const Title = styled.h6`
   ${stylizedDisplayLg}
 
-  margin: ${({ theme }) => theme.spacing(8, 0, 24)};
+  margin: ${({ theme }) => theme.spacing(36, 0, 24)};
   color: ${({ theme }) => theme.colors.darkGray};
 `;
 
@@ -39,10 +40,11 @@ export const Header = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: ${({ theme }) => theme.spacing(24)};
 `;
 
 export const Divider = styled.hr`
-  margin-block: 24px;
+  margin-bottom: ${({ theme }) => theme.spacing(32)};
   border-top: ${({ theme }) => theme.colors.gray30};
 `;
 
@@ -55,14 +57,13 @@ export const ContentContainer = styled.div`
 `;
 
 export const GrayContainer = styled.div`
-  min-height: 900px;
   margin: 28px -24px 0;
-  padding: ${({ theme }) => theme.spacing(32, 24, 0)};
+  padding: ${({ theme }) => theme.spacing(32, 24, 80, 24)};
   background-color: ${({ theme }) => theme.colors.gray10};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.pad}) {
     margin: 28px -33.33% 0;
-    padding: 32px 33.33% 0;
+    padding: 32px 33.33% 80px 33.33%;
   }
 `;
 
