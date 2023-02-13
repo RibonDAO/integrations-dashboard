@@ -14,7 +14,7 @@ export const Title = styled.h6`
 
 export const ImpactContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   row-gap: 16px;
   column-gap: 16px;
 
