@@ -48,6 +48,7 @@ export const SubText = styled.h2`
   ${defaultBodySmRegular}
 
   color: ${({ theme }) => theme.colors.gray30};
+  margin-top: 4px;
 `;
 
 export const InternalImage = styled.img`
