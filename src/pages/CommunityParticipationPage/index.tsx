@@ -55,11 +55,10 @@ function CommunityParticipationPage(): JSX.Element {
     setIsFetching(true);
     try {
       await refetch();
+    } finally {
+      setIsFetching(false);
     }
-    finally {
-    setIsFetching(false);
-    }
-  }
+  };
 
   useEffect(() => {
     if (integrationImpact) {
