@@ -23,6 +23,7 @@ export type RenderComponentProps = {
   locationState?: Record<any, any>;
 };
 
+// eslint-disable-next-line no-unused-vars
 function renderProvider(
   RProvider: any,
   RContext: React.Context<any>,
