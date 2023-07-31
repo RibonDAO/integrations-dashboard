@@ -4,10 +4,6 @@ import { ThemeProvider } from "styled-components";
 import { createMemoryHistory, MemoryHistory } from "history";
 import { I18nextProvider } from "react-i18next";
 import i18n from "i18n-test";
-import AuthenticationProvider, {
-  AuthenticationContext,
-  IAuthenticationContext,
-} from "contexts/authenticationContext";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Router } from "react-router-dom";
 import theme from "styles/theme";
@@ -24,7 +20,6 @@ export interface RenderWithContextResult {
 
 export type RenderComponentProps = {
   history?: MemoryHistory;
-  authenticationProviderValue?: Partial<IAuthenticationContext>;
   locationState?: Record<any, any>;
 };
 
@@ -57,7 +52,6 @@ function renderAllProviders(
   children: any,
   {
     history = createMemoryHistory(),
-    authenticationProviderValue = {},
     locationState = {},
   }: RenderComponentProps = {},
 ) {
@@ -74,12 +68,7 @@ function renderAllProviders(
         <QueryClientProvider client={queryClient}>
           <I18nextProvider i18n={i18n}>
             <Router location={locationState} navigator={historyObject}>
-              {renderProvider(
-                AuthenticationProvider,
-                AuthenticationContext,
-                authenticationProviderValue,
-                children,
-              )}
+              {children}
             </Router>
           </I18nextProvider>
         </QueryClientProvider>
