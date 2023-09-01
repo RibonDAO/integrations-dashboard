@@ -16,10 +16,6 @@ import { Router } from "react-router-dom";
 import theme from "styles/theme";
 import { I18nextProvider } from "react-i18next";
 import i18n from "i18n-test";
-import AuthenticationProvider, {
-  AuthenticationContext,
-  IAuthenticationContext,
-} from "contexts/authenticationContext";
 import { QueryClient, QueryClientProvider } from "react-query";
 import {
   renderHook as renderTestingLibraryHook,
@@ -58,7 +54,6 @@ function renderProvider(
 
 export type RenderComponentProps = {
   history?: MemoryHistory;
-  authenticationProviderValue?: Partial<IAuthenticationContext>;
   modalProviderValue?: Partial<IModalContext>;
   locationState?: Record<any, any>;
 };
@@ -67,7 +62,6 @@ function renderAllProviders(
   children: any,
   {
     history = createMemoryHistory(),
-    authenticationProviderValue = {},
     modalProviderValue = {},
     locationState = {},
   }: RenderComponentProps = {},
@@ -89,12 +83,7 @@ function renderAllProviders(
                 ModalProvider,
                 ModalContext,
                 modalProviderValue,
-                renderProvider(
-                  AuthenticationProvider,
-                  AuthenticationContext,
-                  authenticationProviderValue,
-                  children,
-                ),
+                children,
               )}
             </Router>
           </I18nextProvider>

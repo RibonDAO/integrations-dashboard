@@ -51,17 +51,25 @@ function CommunityParticipationPage(): JSX.Element {
     formatDate(endDate),
   );
 
+  const refetchData = async () => {
+    setIsFetching(true);
+    try {
+      await refetch();
+    } finally {
+      setIsFetching(false);
+    }
+  };
+
   useEffect(() => {
     if (integrationImpact) {
       setIsFetching(false);
     }
-  }, [integrationImpact]);
+  }, [JSON.stringify(integrationImpact)]);
 
   useEffect(() => {
     updateLocationSearch("start_date", formatDate(startDate));
     updateLocationSearch("end_date", formatDate(endDate));
-    setIsFetching(true);
-    refetch();
+    refetchData();
   }, [startDate, endDate]);
 
   return (
