@@ -35,10 +35,7 @@ export function convertParamsToString(params: EventParams): EventParams {
   return convertedParams;
 }
 
-export function logEvent(
-  eventName: string,
-  params: EventParams = {},
-): void {
+export function logEvent(eventName: string, params: EventParams = {}): void {
   try {
     const convertedParams = params ? convertParamsToString(params) : {};
     firebase.analytics().logEvent(eventName, convertedParams);
